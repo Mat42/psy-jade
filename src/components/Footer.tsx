@@ -114,7 +114,13 @@ export default function Footer() {
               </div>
               
               {/* Minimalist Grid representing streets */}
-              <div className="h-16 bg-brand-charcoal border border-brand-beige/5 rounded relative overflow-hidden flex items-center justify-center">
+              <a 
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CABINET_INFO.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-16 bg-brand-charcoal border border-brand-beige/5 rounded relative overflow-hidden flex items-center justify-center hover:opacity-80 transition-opacity block cursor-pointer"
+                aria-label="Ouvrir dans Google Maps"
+              >
                 {/* Horizontal road */}
                 <div className="absolute left-0 right-0 h-4 bg-brand-beige/5" />
                 {/* Vertical road */}
@@ -123,7 +129,7 @@ export default function Footer() {
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-terracotta text-white p-1 rounded-full animate-pulse shadow-md z-10">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
-              </div>
+              </a>
 
               <p className="font-sans text-[10px] text-brand-beige/60 leading-tight">
                 🚗 <strong>Accès :</strong> Entrée juste après le portail violet. Stationnement disponible.
