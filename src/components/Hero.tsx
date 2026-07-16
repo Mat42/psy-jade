@@ -71,8 +71,8 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-brand-charcoal uppercase tracking-wider">Cabinet physique</h4>
-                  <p className="font-sans text-[11px] text-brand-charcoal/60 mt-0.5">Accès PMR à Villefranche</p>
+                  <h4 className="font-sans text-xs font-semibold text-brand-charcoal uppercase tracking-wider">Cabinet</h4>
+                  <p className="font-sans text-[11px] text-brand-charcoal/60 mt-0.5">À Villefranche-sur-Saône</p>
                 </div>
               </div>
 
