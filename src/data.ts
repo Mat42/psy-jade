@@ -1,14 +1,14 @@
 import { TherapyMethod, SpecialtyItem, FAQItem, TestimonialItem } from './types';
 
 export const CABINET_INFO = {
-  name: "Sarah Lambert",
-  title: "Psychologue Clinicienne & Psychothérapeute",
+  name: "Jade Bourloux",
+  title: "Psychologue – Thérapeute systémicienne",
   adeli: "ADELI: 699312345", // Official french register for health practitioners
   siret: "SIRET: 812 345 678 00012",
   phone: "04 74 12 34 56",
   phoneFormatted: "+33 4 74 12 34 56",
-  email: "contact@sarahlambert-psychologue.fr",
-  address: "142 Rue de la République, 69400 Villefranche-sur-Saône",
+  email: "contact@jadebourloux-psychologue.fr",
+  address: "46 rue Alexandre Richetta, 69400 Villefranche-sur-Saône",
   shortAddress: "Villefranche-sur-Saône",
   hours: [
     { days: "Lundi - Vendredi", hours: "08:30 - 19:30" },
@@ -16,46 +16,33 @@ export const CABINET_INFO = {
     { days: "Dimanche", hours: "Fermé" }
   ],
   doctolibUrl: "https://www.doctolib.fr", // Standard platform in France
-  calendlyUrl: "https://calendly.com/sarahlambert-psychologue", // Lien pour la prise de rendez-vous en ligne
   lat: 45.9833,
   lng: 4.7167
 };
 
 export const THERAPY_METHODS: TherapyMethod[] = [
   {
-    id: "tcc",
-    title: "Thérapies Cognitives et Comportementales (TCC)",
-    shortDesc: "Une approche active et structurée axée sur les difficultés actuelles et le changement de schémas de pensée.",
-    description: "Les TCC s'intéressent au lien entre vos pensées, vos émotions et vos comportements. Ensemble, nous identifions les réactions automatiques ou les croyances limitantes qui génèrent de la souffrance pour les remplacer progressivement par des comportements plus adaptés et épanouissants.",
+    id: "systemique",
+    title: "Thérapie Systémique",
+    shortDesc: "Prendre en compte la personne dans son histoire, ses relations et son environnement.",
+    description: "La thérapie systémique considère que les difficultés ne peuvent pas toujours être comprises de manière isolée. Elles s'inscrivent souvent dans un contexte plus large : une histoire familiale, des relations construites au fil du temps, un environnement professionnel ou des événements de vie. Il ne s'agit pas de rechercher un responsable, mais de mieux comprendre les interactions qui influencent votre situation aujourd'hui pour faire émerger de nouvelles possibilités de changement.",
     benefits: [
-      "Gestion des troubles anxieux et phobies",
-      "Outils concrets applicables au quotidien",
-      "Traitement des troubles obsessionnels (TOC)",
-      "Accompagnement de la dépression"
+      "Comprendre les schémas relationnels qui se répètent",
+      "Identifier vos ressources personnelles",
+      "Prendre du recul sur les événements vécus",
+      "Retrouver un équilibre plus satisfaisant"
     ]
   },
   {
-    id: "emdr",
-    title: "Intégration Neuro-Émotionnelle par l'EMDR",
-    shortDesc: "Une thérapie scientifiquement reconnue pour libérer la charge émotionnelle associée aux traumatismes.",
-    description: "L'EMDR (Eye Movement Desensitization and Reprocessing) permet de débloquer et de retraiter des souvenirs douloureux ou traumatiques que le cerveau n'a pas réussi à digérer. Par des stimulations bilatérales alternées (mouvements oculaires, tapotements), nous réactivons le processus d'auto-guérison cérébrale.",
+    id: "clinique",
+    title: "Psychologie Clinique",
+    shortDesc: "Une approche d'écoute et de soutien centrée sur la singularité de chaque personne.",
+    description: "Je conçois la thérapie comme un espace de réflexion, de dialogue et de co-construction. Mon rôle n'est pas de vous dire quoi faire, mais de vous accompagner dans la compréhension de votre situation afin que vous puissiez mobiliser vos propres ressources et avancer vers des solutions qui aient du sens pour vous.",
     benefits: [
-      "Soulagement du stress post-traumatique (PTSD)",
-      "Traitement des blessures d'enfance ou chocs émotionnels",
-      "Apaisement des deuils pathologiques",
-      "Réduction des états d'angoisse aigus"
-    ]
-  },
-  {
-    id: "humaniste",
-    title: "Thérapie Humaniste & Clinique",
-    shortDesc: "Une écoute centrée sur la personne, favorisant l'exploration de soi et l'autonomie.",
-    description: "Inspirée des travaux de Carl Rogers, cette approche considère que chaque personne possède en elle les ressources nécessaires pour s'épanouir. Mon rôle est de vous offrir un espace d'accueil inconditionnel, de sécurité et d'empathie profonde pour vous aider à clarifier votre vécu et faire vos propres choix.",
-    benefits: [
-      "Amélioration de l'estime de soi et confiance",
-      "Épanouissement personnel et quête de sens",
-      "Soutien face aux crises existentielles ou de vie",
-      "Développement de l'auto-compassion"
+      "Mettre des mots sur ce qui est vécu",
+      "Retrouver ses propres ressources",
+      "Espace de dialogue sans jugement",
+      "Accompagnement sur mesure"
     ]
   }
 ];
@@ -64,43 +51,60 @@ export const SPECIALTIES: SpecialtyItem[] = [
   {
     id: "adultes",
     title: "Accompagnement des Adultes",
-    subtitle: "Retrouver l'équilibre face aux tempêtes de la vie",
+    subtitle: "Retrouver vos ressources face aux événements de la vie",
     iconName: "User",
-    description: "Chaque vie comporte son lot de difficultés. Que vous traversiez une période de stress intense, une transition douloureuse ou que vous ressentiez un mal-être diffus sans cause apparente, je vous accompagne pour dénouer ces blocages et retrouver de la clarté.",
+    description: "Consulter un psychologue ne signifie pas que l'on est « faible » ou que l'on ne parvient plus à faire face. C'est avant tout s'accorder un temps pour comprendre ce qui se joue, mettre des mots sur ce qui est vécu et retrouver ses propres ressources.",
     symptoms: [
-      "Troubles anxieux, crises de panique, stress chronique",
-      "Épuisement professionnel (Burn-out)",
-      "Dépendances affectives, ruptures douloureuses",
-      "Deuil, perte, sentiment de solitude",
-      "Baisse de confiance en soi et sentiment d'illégitimité"
+      "Stress, anxiété ou mal-être",
+      "Perte de confiance en soi",
+      "Séparation, deuil ou changement de vie",
+      "Difficultés relationnelles, familiales ou de couple",
+      "Épuisement lié aux responsabilités",
+      "Fausse couche, IMG ou deuil périnatal"
     ]
   },
   {
-    id: "adolescents",
-    title: "Soutien aux Adolescents",
-    subtitle: "Traverser la transition vers l'âge adulte en sécurité",
-    iconName: "Sparkles",
-    description: "L'adolescence est une période de mutations physiques, émotionnelles et sociales majeures. C'est parfois le moment de replis sur soi, d'incompréhensions ou de mal-être scolaire. J'offre aux adolescents un espace neutre, confidentiel et dénué de tout jugement.",
-    symptoms: [
-      "Harcèlement scolaire, phobie scolaire, décrochage",
-      "Gestion difficile des émotions et impulsivité",
-      "Conflits familiaux et rupture de communication",
-      "Troubles du comportement alimentaire (TCA) débutants",
-      "Questions identitaires et mal-être corporel"
-    ]
-  },
-  {
-    id: "couples",
-    title: "Thérapie de Couple",
-    subtitle: "Rétablir le dialogue et réinventer le lien",
+    id: "vieillissement",
+    title: "Vieillir, accompagner, traverser",
+    subtitle: "Accompagnement face aux enjeux du vieillissement",
     iconName: "Heart",
-    description: "Le couple traverse des cycles et des épreuves : arrivée d'un enfant, routine, conflits répétés, infidélité. La thérapie de couple n'est pas un tribunal, mais un espace sécurisé où chacun peut exprimer ses besoins et blessures, pour comprendre la dynamique relationnelle et prendre des décisions constructives.",
+    description: "L'avancée en âge s'accompagne parfois de nombreux changements : évolution de l'état de santé, perte d'autonomie, départ à la retraite, isolement, deuils successifs. Chacun les traverse avec son histoire, ses émotions et ses ressources.",
     symptoms: [
-      "Communication rompue ou devenue agressive",
-      "Baisse du désir et sentiment de s'être éloignés",
-      "Accompagnement à la parentalité (crise du post-partum)",
-      "Difficultés à surmonter une trahison ou un deuil",
-      "Aide à la séparation sereine si nécessaire"
+      "Personnes avançant en âge",
+      "Aidants familiaux",
+      "Familles confrontées à une perte d'autonomie",
+      "Accompagnement face à la maladie neuro-évolutive",
+      "Personnes vivant un deuil"
+    ]
+  },
+  {
+    id: "travail",
+    title: "Travail et Souffrance Professionnelle",
+    subtitle: "Retrouver un équilibre durable",
+    iconName: "Briefcase",
+    description: "Le travail peut être source d'épanouissement, de reconnaissance, mais aussi de souffrance. Ensemble, nous chercherons à comprendre ce qui a conduit à cette situation et les changements permettant de retrouver un équilibre durable.",
+    symptoms: [
+      "Burn-out ou risque de burn-out",
+      "Perte de sens, surcharge de travail",
+      "Stress chronique, conflits professionnels",
+      "Difficultés relationnelles",
+      "Reconversion professionnelle",
+      "Retour au travail après un arrêt"
+    ]
+  },
+  {
+    id: "entreprises",
+    title: "Entreprises et Équipes",
+    subtitle: "Soutien et accompagnement sur mesure",
+    iconName: "Building",
+    description: "Les organisations sont avant tout composées d'hommes et de femmes. J'interviens au sein des structures (entreprises, établissements médico-sociaux) pour proposer un accompagnement adapté aux réalités du terrain.",
+    symptoms: [
+      "Groupes de parole",
+      "Analyse de pratiques professionnelles",
+      "Accompagnement des équipes",
+      "Prévention des risques psychosociaux (RPS)",
+      "Soutien des managers et accompagnement du changement",
+      "Gestion des crises institutionnelles"
     ]
   }
 ];
@@ -108,49 +112,47 @@ export const SPECIALTIES: SpecialtyItem[] = [
 export const FAQS: FAQItem[] = [
   {
     category: "Pratique",
-    question: "Comment se déroule la première consultation ?",
-    answer: "La première séance est un temps d'accueil et d'échange mutuel. C'est l'occasion pour vous d'exposer ce qui vous amène, à votre rythme, et d'exprimer vos attentes. De mon côté, cela me permet de comprendre votre demande et de vous proposer un cadre d'accompagnement adapté (rythme, type de thérapie). C'est également le moment idéal pour poser toutes vos questions sur ma pratique."
+    question: "Comment savoir si j'ai besoin de consulter ?",
+    answer: "Il n'est pas nécessaire d'attendre d'aller très mal. Le simple fait de ressentir le besoin d'être écouté, de prendre du recul ou de mieux comprendre ce que vous traversez est déjà une raison suffisante."
   },
   {
     category: "Pratique",
-    question: "Quelle est la durée et le rythme des séances ?",
-    answer: "Une séance individuelle dure généralement 55 à 60 minutes. Pour la thérapie de couple, le format est plus long (environ 1h15). Le rythme est défini ensemble, selon vos besoins et votre budget. Au début, un rythme d'une séance toutes les deux semaines est souvent préconisé pour installer une dynamique thérapeutique, puis les séances s'espacent progressivement."
+    question: "Combien de temps dure une consultation ?",
+    answer: "Une consultation dure de 45 à 60 minutes."
+  },
+  {
+    category: "Pratique",
+    question: "Combien de séances sont nécessaires ?",
+    answer: "Le nombre de séances est défini ensemble selon votre demande et vos besoins."
   },
   {
     category: "Finances",
-    question: "Les consultations sont-elles remboursées par la Sécurité Sociale ?",
-    answer: "Actuellement, n'étant pas conventionnée dans le dispositif 'Mon Soutien Psy', mes consultations ne sont pas remboursées par la Sécurité Sociale. En revanche, de très nombreuses mutuelles complémentaires remboursent tout ou partie des consultations de psychologues sous forme de forfait annuel ou de montant par séance. Je vous délivre une facture acquittée à la fin de chaque séance pour vos démarches."
-  },
-  {
-    category: "Pratique",
-    question: "Quelle est votre politique d'annulation ?",
-    answer: "Votre créneau de consultation vous est entièrement réservé. Si vous devez annuler ou déplacer un rendez-vous, je vous demande de me prévenir au moins 48 heures à l'avance. Tout rendez-vous non décommandé dans ce délai sera considéré comme dû, par respect pour le travail clinique et pour les personnes en attente de rendez-vous rapide."
+    question: "Les consultations sont-elles remboursées ?",
+    answer: "Certaines mutuelles proposent une prise en charge partielle ou totale."
   },
   {
     category: "Déontologie",
-    question: "Qu'est-ce que le secret professionnel ?",
-    answer: "Le psychologue clinicien est soumis au Code de Déontologie des Psychologues de France. Le secret professionnel est absolu et garantit la confidentialité totale de nos échanges. Rien de ce que vous me confiez n'est transmis à un tiers (famille, conjoint, employeur, médecin), sauf en cas d'obligation légale d'assistance à personne en danger."
+    question: "Les échanges sont-ils confidentiels ?",
+    answer: "Oui. Le secret professionnel s'applique."
+  },
+  {
+    category: "Pratique",
+    question: "Puis-je annuler un rendez-vous ?",
+    answer: "Merci de prévenir au moins 48 heures à l'avance. Toute séance annulée moins de 48 heures avant le rendez-vous (hors cas de force majeure) reste due."
   }
 ];
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: "1",
-    quote: "J'ai consulté Mme Lambert suite à un burn-out professionnel. Son écoute extrêmement bienveillante, dépourvue de tout jugement, et ses conseils en TCC m'ont permis de reconstruire mes limites et de reprendre confiance en mes capacités.",
+    quote: "J'ai consulté suite à un épuisement professionnel. L'approche systémique m'a permis de comprendre mon rapport au travail et de retrouver un équilibre.",
     author: "Marc D.",
     type: "Adulte - Accompagnement Burn-out",
     date: "Mars 2026"
   },
   {
     id: "2",
-    quote: "Notre fille de 15 ans était en grand repli sur elle-même avec de fortes angoisses scolaires. Grâce à Sarah, elle a trouvé un espace de liberté pour parler de ses doutes. Nous avons vu notre fille revivre et s'apaiser au fil des mois.",
-    author: "Karine et Thomas, parents de Léa",
-    type: "Parents d'Adolescent",
-    date: "Mai 2026"
-  },
-  {
-    id: "3",
-    quote: "La thérapie de couple nous a sauvés de la séparation. Nous ne savions plus nous écouter sans crier. Sarah Lambert a agi comme un médiateur neutre et doux, nous aidant à comprendre nos blessures réciproques.",
+    quote: "Notre thérapie de couple nous a permis de rétablir le dialogue. Jade a su nous accompagner avec beaucoup de neutralité et de bienveillance pour comprendre nos schémas relationnels.",
     author: "Amandine & Julien",
     type: "Thérapie de Couple",
     date: "Janvier 2026"
@@ -160,23 +162,23 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const RATES = [
   {
     title: "Consultation Individuelle",
-    target: "Adultes & Adolescents",
+    target: "Adultes",
     price: "60 €",
-    duration: "55 - 60 min",
-    details: "En cabinet ou en téléconsultation (vidéo sécurisée). Suivi régulier ou soutien ponctuel."
+    duration: "45 - 60 min",
+    details: "En cabinet ou en téléconsultation."
   },
   {
-    title: "Thérapie de Couple",
+    title: "Consultation de Couple",
     target: "Couples",
     price: "80 €",
-    duration: "1h15",
-    details: "Présence indispensable des deux partenaires. Espace de médiation et de reconstruction du dialogue."
+    duration: "45 - 60 min",
+    details: "En cabinet ou en téléconsultation."
   },
   {
-    title: "Bilan Psychologique initial",
-    target: "Première rencontre",
-    price: "60 €",
-    duration: "60 min",
-    details: "Évaluation de la situation, ciblage des objectifs thérapeutiques, définition du cadre de suivi."
+    title: "Intervention professionnelle",
+    target: "Entreprises, établissements et équipes",
+    price: "Sur devis",
+    duration: "Variable",
+    details: "Groupes de parole, analyse de pratiques, accompagnement au changement."
   }
 ];

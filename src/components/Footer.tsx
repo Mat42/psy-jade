@@ -41,7 +41,7 @@ export default function Footer() {
               {CABINET_INFO.title}
             </p>
             <p className="font-sans text-xs text-brand-beige/70 leading-relaxed">
-              Cabinet de psychologie d'orientation intégrative accueillant adultes, adolescents et couples. Écoute active et méthodes scientifiquement validées.
+              Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
             </p>
             <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-beige/50">
               <span className="font-mono">{CABINET_INFO.adeli}</span>
@@ -60,7 +60,6 @@ export default function Footer() {
                 { label: 'Approche Thérapeutique', href: '#approche' },
                 { label: 'Secteurs d’Intervention', href: '#pour-qui' },
                 { label: 'Tarifs et Mutuelles', href: '#tarifs' },
-                { label: 'Questions Fréquentes', href: '#faq' },
                 { label: 'Prendre Rendez-vous', href: '#contact' }
               ].map((link, idx) => (
                 <li key={idx}>
@@ -83,18 +82,12 @@ export default function Footer() {
               Horaires &amp; Consultations
             </h4>
             <div className="space-y-2 text-xs text-brand-beige/70">
-              <div className="flex justify-between border-b border-brand-beige/5 pb-1">
-                <span>Lundi - Vendredi</span>
-                <span className="font-mono text-white">08:30 - 19:30</span>
-              </div>
-              <div className="flex justify-between border-b border-brand-beige/5 pb-1">
-                <span>Samedi</span>
-                <span className="font-mono text-white">09:00 - 13:00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Dimanche</span>
-                <span className="text-brand-terracotta">Fermé</span>
-              </div>
+              {CABINET_INFO.hours.map((h, idx) => (
+                <div key={idx} className="flex justify-between border-b border-brand-beige/5 pb-1 last:border-0 last:pb-0">
+                  <span>{h.days}</span>
+                  <span className="font-mono text-white">{h.hours}</span>
+                </div>
+              ))}
             </div>
             <div className="bg-brand-beige/5 p-3.5 rounded-lg border border-brand-beige/10">
               <p className="font-sans text-[11px] text-brand-beige/60 leading-normal">
@@ -117,7 +110,7 @@ export default function Footer() {
             <div className="bg-brand-charcoal/80 border border-brand-beige/10 rounded-xl p-3 space-y-2 relative">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold text-brand-sage uppercase tracking-wider">Plan de quartier</span>
-                <span className="text-[10px] text-brand-beige/40">Gare à 10 min</span>
+                <span className="text-[10px] text-brand-beige/40">Bus à proximité</span>
               </div>
               
               {/* Minimalist Grid representing streets */}
@@ -130,14 +123,10 @@ export default function Footer() {
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-terracotta text-white p-1 rounded-full animate-pulse shadow-md z-10">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
-                {/* Street Label */}
-                <span className="absolute bottom-1 right-2 text-[8px] text-brand-beige/30 font-mono">R. de la République</span>
-                <span className="absolute top-1 left-2 text-[8px] text-brand-beige/30 font-mono">P. République</span>
               </div>
 
               <p className="font-sans text-[10px] text-brand-beige/60 leading-tight">
-                🚗 <strong>Parking :</strong> République gratuit 30 min face au cabinet. <br />
-                🚆 <strong>TER / Bus :</strong> Gare de Villefranche à 750m.
+                🚗 <strong>Accès :</strong> Entrée juste après le portail violet. Stationnement disponible.
               </p>
             </div>
           </div>

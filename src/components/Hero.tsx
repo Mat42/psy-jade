@@ -41,15 +41,17 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           <div className="lg:col-span-7 space-y-8 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-sage/10 text-brand-sage rounded-full text-xs font-semibold uppercase tracking-wider">
               <Award className="w-3.5 h-3.5" />
-              <span>Psychologue clinicienne diplômée d'État</span>
+              <span>Psychologue – Thérapeute systémicienne</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-brand-charcoal leading-[1.1] tracking-tight">
-              Retrouver un espace de <span className="italic text-brand-sage font-medium font-serif">parole</span> et de <span className="italic text-brand-terracotta font-medium font-serif">clarté</span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-normal text-brand-charcoal leading-[1.1] tracking-tight">
+              Comprendre les liens, <span className="italic text-brand-sage font-medium font-serif">accompagner les changements.</span>
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-brand-charcoal/75 leading-relaxed max-w-2xl">
-              Au sein de mon cabinet à <strong>{CABINET_INFO.shortAddress}</strong>, je vous propose un accompagnement psychologique sur-mesure, confidentiel et profondément bienveillant. Pour traverser une crise passagère ou accomplir un travail thérapeutique durable.
+              Une séparation. Une perte. Une difficulté familiale. Une souffrance au travail. La maladie d'un proche. Une fausse couche. L'avancée en âge d'un parent. Une décision importante.
+              <br/><br/>
+              Ces événements peuvent bouleverser nos repères et nous donner le sentiment de ne plus savoir comment avancer. Je vous accueille dans un espace d'écoute, de réflexion et d'accompagnement où chaque situation est considérée dans toute sa singularité.
             </p>
 
             {/* Badges row */}
@@ -119,7 +121,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] lg:aspect-[3/4] bg-brand-cream/30">
               <img
                 src={therapyOfficeImg}
-                alt="Cabinet de psychologie de Sarah Lambert"
+                alt={`Cabinet de psychologie de ${CABINET_INFO.name}`}
                 className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />

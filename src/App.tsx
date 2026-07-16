@@ -3,9 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Specialties from './components/Specialties';
-import Approaches from './components/Approaches';
 import FAQTarifs from './components/FAQTarifs';
-import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
@@ -32,9 +30,7 @@ export default function App() {
         <Hero onScrollToSection={(id) => {}} />
         <About />
         <Specialties />
-        <Approaches />
         <FAQTarifs />
-        <Testimonials />
         <ContactForm />
       </main>
 

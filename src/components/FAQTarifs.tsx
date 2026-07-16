@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Euro, Clock, HelpCircle, ChevronDown, ChevronUp, FileText, CheckCircle } from 'lucide-react';
-import { FAQS, RATES } from '../data';
+import { FAQS, RATES, CABINET_INFO } from '../data';
 
 export default function FAQTarifs() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -146,7 +146,7 @@ export default function FAQTarifs() {
             <div className="flex items-center gap-2 px-4 py-3.5 bg-white border border-brand-sage/10 rounded-xl">
               <CheckCircle className="w-4 h-4 text-brand-sage flex-shrink-0" />
               <p className="font-sans text-[11px] sm:text-xs text-brand-charcoal/65">
-                Mme Sarah Lambert est habilitée par l'<strong>ARS Auvergne-Rhône-Alpes</strong>, assurant que ses diplômes universitaires de niveau Bac+5 ont été dûment validés par l'État.
+                {CABINET_INFO.name} est habilitée par l'<strong>ARS Auvergne-Rhône-Alpes</strong>, assurant que ses diplômes universitaires de niveau Bac+5 ont été dûment validés par l'État.
               </p>
             </div>
 

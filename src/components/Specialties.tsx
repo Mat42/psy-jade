@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Sparkles, Heart, ChevronDown, ChevronUp, Check } from 'lucide-react';
+import { User, Heart, Briefcase, Building, ChevronDown, ChevronUp, Check } from 'lucide-react';
 import { SPECIALTIES } from '../data';
 
 export default function Specialties() {
@@ -8,8 +8,9 @@ export default function Specialties() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'User': return <User className="w-5 h-5" />;
-      case 'Sparkles': return <Sparkles className="w-5 h-5" />;
       case 'Heart': return <Heart className="w-5 h-5" />;
+      case 'Briefcase': return <Briefcase className="w-5 h-5" />;
+      case 'Building': return <Building className="w-5 h-5" />;
       default: return <User className="w-5 h-5" />;
     }
   };
@@ -35,15 +36,12 @@ export default function Specialties() {
         <div className="max-w-3xl mx-auto space-y-4 mb-16 text-center">
           <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Champs d'intervention</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-charcoal">
-            Pour qui ? Pour quoi <span className="italic font-medium text-brand-sage font-serif">consulter</span> ?
+            <span className="italic font-medium text-brand-sage font-serif">J'accompagne :</span>
           </h2>
-          <p className="font-sans text-brand-charcoal/65 text-sm sm:text-base leading-relaxed">
-            Il n'y a pas de mauvaise raison pour faire la démarche de rencontrer un psychologue. Qu'il s'agisse d'un moment de crise aigu ou d'un besoin de fond, j'adapte ma thérapie à chaque profil.
-          </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {SPECIALTIES.map((spec) => {
             const isExpanded = expandedCard === spec.id;
             return (
