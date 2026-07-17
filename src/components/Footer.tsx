@@ -44,7 +44,7 @@ export default function Footer() {
               Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
             </p>
             <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-beige/50">
-              <span className="font-mono">{CABINET_INFO.adeli}</span>
+              <span className="font-mono">{CABINET_INFO.rpps}</span>
               <span className="font-mono">{CABINET_INFO.siret}</span>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Footer() {
           </div>
           
           <div className="flex gap-4 flex-wrap justify-center">
-            <span>Enregistrement ARS ADELI : {CABINET_INFO.adeli.split(': ')[1]}</span>
+            <span>Enregistrement ARS RPPS : {CABINET_INFO.rpps.split(': ')[1]}</span>
             <span>•</span>
             <span>Membre d'une association agréée</span>
             <span>•</span>

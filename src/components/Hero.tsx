@@ -44,14 +44,16 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               <span>Psychologue – Thérapeute systémicienne</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-normal text-brand-charcoal leading-[1.1] tracking-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-normal text-brand-terracotta leading-[1.1] tracking-tight">
               Comprendre les liens, <span className="italic text-brand-sage font-medium font-serif">accompagner les changements.</span>
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-brand-charcoal/75 leading-relaxed max-w-2xl">
-              Une séparation. Une perte. Une difficulté familiale. Une souffrance au travail. La maladie d'un proche. Une fausse couche. L'avancée en âge d'un parent. Une décision importante.
+              Au fil de la vie, nous pouvons être confrontés à des événements qui viennent bousculer nos repères : une séparation, une difficulté familiale, une souffrance au travail, la maladie d'un proche, un deuil ou tout simplement le sentiment de ne plus trouver son équilibre.
               <br/><br/>
-              Ces événements peuvent bouleverser nos repères et nous donner le sentiment de ne plus savoir comment avancer. Je vous accueille dans un espace d'écoute, de réflexion et d'accompagnement où chaque situation est considérée dans toute sa singularité.
+              Je vous accueille dans un espace d'écoute et d'accompagnement où chaque personne est considérée dans sa singularité, son histoire et ses relations.
+              <br/><br/>
+              Parce que derrière chaque difficulté, il y a avant tout une personne, une histoire et des liens qui méritent d'être entendus.
             </p>
 
             {/* Badges row */}
@@ -81,8 +83,8 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                   <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-brand-charcoal uppercase tracking-wider">N° ADELI Certifié</h4>
-                  <p className="font-sans text-[11px] text-brand-charcoal/60 mt-0.5">Enregistré en Préfecture</p>
+                  <h4 className="font-sans text-xs font-semibold text-brand-charcoal uppercase tracking-wider">N° RPPS</h4>
+                  <p className="font-sans text-[11px] text-brand-charcoal/60 mt-0.5">10112203913</p>
                 </div>
               </div>
             </div>

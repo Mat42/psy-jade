@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,12 +6,23 @@ import Specialties from './components/Specialties';
 import FAQTarifs from './components/FAQTarifs';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import AnnexePage from './components/AnnexePage';
 
 export default function App() {
-  // Scroll to hash elements if present on load or direct navigation
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
+
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash;
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Scroll to hash elements if present on load or direct navigation (for anchor links)
+  useEffect(() => {
+    if (currentHash && !currentHash.startsWith('#/annexe/')) {
+      const id = currentHash;
       const element = document.querySelector(id);
       if (element) {
         setTimeout(() => {
@@ -19,7 +30,13 @@ export default function App() {
         }, 100);
       }
     }
-  }, []);
+  }, [currentHash]);
+
+  // Handle Annexe routes
+  if (currentHash.startsWith('#/annexe/')) {
+    const annexeId = currentHash.replace('#/annexe/', '');
+    return <AnnexePage id={annexeId} />;
+  }
 
   return (
     <div className="min-h-screen bg-brand-beige text-brand-charcoal selection:bg-brand-sage/20 selection:text-brand-charcoal">

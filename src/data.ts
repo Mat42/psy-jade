@@ -2,8 +2,8 @@ import { TherapyMethod, SpecialtyItem, FAQItem, TestimonialItem } from './types'
 
 export const CABINET_INFO = {
   name: "Jade Bourloux",
-  title: "Psychologue – Thérapeute systémicienne",
-  adeli: "ADELI: 699312345", // Official french register for health practitioners
+  title: "Psychologue clinicienne – Thérapeute",
+  rpps: "N° RPPS: 10112203913",
   siret: "SIRET: 812 345 678 00012",
   phone: "04 74 12 34 56",
   phoneFormatted: "+33 4 74 12 34 56",
@@ -50,95 +50,90 @@ export const THERAPY_METHODS: TherapyMethod[] = [
 export const SPECIALTIES: SpecialtyItem[] = [
   {
     id: "adultes",
-    title: "Accompagnement des Adultes",
-    subtitle: "Retrouver vos ressources face aux événements de la vie",
+    title: "Accompagnement des adultes",
+    subtitle: "Couples, familles et parentalité",
     iconName: "User",
     description: "Consulter un psychologue ne signifie pas que l'on est « faible » ou que l'on ne parvient plus à faire face. C'est avant tout s'accorder un temps pour comprendre ce qui se joue, mettre des mots sur ce qui est vécu et retrouver ses propres ressources.",
-    symptoms: [
-      "Stress, anxiété ou mal-être",
-      "Perte de confiance en soi",
-      "Séparation, deuil ou changement de vie",
-      "Difficultés relationnelles, familiales ou de couple",
-      "Épuisement lié aux responsabilités",
-      "Fausse couche, IMG ou deuil périnatal"
-    ]
+    symptoms: [],
+    link: "#/annexe/3"
   },
   {
     id: "vieillissement",
-    title: "Vieillir, accompagner, traverser",
-    subtitle: "Accompagnement face aux enjeux du vieillissement",
+    title: "Vieillissement, aidants et familles",
+    subtitle: "Accompagnement et soutien",
     iconName: "Heart",
-    description: "L'avancée en âge s'accompagne parfois de nombreux changements : évolution de l'état de santé, perte d'autonomie, départ à la retraite, isolement, deuils successifs. Chacun les traverse avec son histoire, ses émotions et ses ressources.",
+    description: "Vieillir, accompagner un proche ou faire face à une perte d'autonomie sont des étapes de vie qui peuvent susciter de nombreuses émotions et parfois mettre les relations familiales à l'épreuve.",
     symptoms: [
-      "Personnes avançant en âge",
-      "Aidants familiaux",
-      "Familles confrontées à une perte d'autonomie",
-      "Accompagnement face à la maladie neuro-évolutive",
-      "Personnes vivant un deuil"
-    ]
+      "Perte d’autonomie et avancée en âge",
+      "Maladies et pathologies neuro-évolutives",
+      "Deuil et séparation",
+      "Être aidant et soutenir un proche",
+      "Entrée en établissement"
+    ],
+    link: "#/annexe/4"
   },
   {
     id: "travail",
-    title: "Travail et Souffrance Professionnelle",
-    subtitle: "Retrouver un équilibre durable",
+    title: "Travail et vie professionnelle",
+    subtitle: "Souffrance et transitions de carrière",
     iconName: "Briefcase",
-    description: "Le travail peut être source d'épanouissement, de reconnaissance, mais aussi de souffrance. Ensemble, nous chercherons à comprendre ce qui a conduit à cette situation et les changements permettant de retrouver un équilibre durable.",
+    description: "Le travail peut parfois devenir une source de stress, de souffrance ou de perte de sens, avec des répercussions sur l’ensemble de la vie. Je vous accompagne pour retrouver vos ressources.",
     symptoms: [
-      "Burn-out ou risque de burn-out",
-      "Perte de sens, surcharge de travail",
-      "Stress chronique, conflits professionnels",
-      "Difficultés relationnelles",
-      "Reconversion professionnelle",
-      "Retour au travail après un arrêt"
-    ]
+      "Burn-out, risque de burn-out",
+      "Perte de sens",
+      "Stress, surcharge de travail",
+      "Difficultés relationnelles, conflits professionnels",
+      "Changements professionnels",
+      "Sentiment de solitude lié à la fonction"
+    ],
+    link: "#/annexe/5"
   },
   {
     id: "entreprises",
-    title: "Entreprises et Équipes",
+    title: "Entreprises, établissements et équipes",
     subtitle: "Soutien et accompagnement sur mesure",
     iconName: "Building",
-    description: "Les organisations sont avant tout composées d'hommes et de femmes. J'interviens au sein des structures (entreprises, établissements médico-sociaux) pour proposer un accompagnement adapté aux réalités du terrain.",
-    symptoms: [
-      "Groupes de parole",
-      "Analyse de pratiques professionnelles",
-      "Accompagnement des équipes",
-      "Prévention des risques psychosociaux (RPS)",
-      "Soutien des managers et accompagnement du changement",
-      "Gestion des crises institutionnelles"
-    ]
+    description: "Parce que la qualité des relations humaines est un enjeu essentiel au sein des organisations, j'interviens auprès des entreprises, établissements médico-sociaux, associations et collectivités.",
+    symptoms: [],
+    link: "#/annexe/6"
   }
 ];
 
 export const FAQS: FAQItem[] = [
   {
     category: "Pratique",
+    question: "Quand consulter ?",
+    answer: "Chaque démarche est unique. Qu'il s'agisse d'une difficulté ponctuelle ou d'un questionnement plus ancien, nous prendrons le temps de comprendre ensemble ce qui vous amène aujourd'hui."
+  },
+  {
+    category: "Pratique",
     question: "Comment savoir si j'ai besoin de consulter ?",
-    answer: "Il n'est pas nécessaire d'attendre d'aller très mal. Le simple fait de ressentir le besoin d'être écouté, de prendre du recul ou de mieux comprendre ce que vous traversez est déjà une raison suffisante."
+    answer: "Il n'est pas nécessaire d'attendre d'aller très mal pour consulter un psychologue. Vous pouvez ressentir le besoin d'être accompagné(e) à la suite d'un événement particulier, d'une période de stress, d'un questionnement ou simplement parce que vous avez le sentiment de ne plus parvenir à prendre suffisamment de recul sur votre situation."
   },
   {
     category: "Pratique",
     question: "Combien de temps dure une consultation ?",
-    answer: "Une consultation dure de 45 à 60 minutes."
+    answer: "Une consultation dure environ 45 à 60 minutes."
   },
   {
     category: "Pratique",
     question: "Combien de séances sont nécessaires ?",
-    answer: "Le nombre de séances est défini ensemble selon votre demande et vos besoins."
+    answer: "Le rythme et la durée de l'accompagnement sont toujours définis ensemble, en fonction de votre demande et de vos besoins."
   },
   {
     category: "Finances",
     question: "Les consultations sont-elles remboursées ?",
-    answer: "Certaines mutuelles proposent une prise en charge partielle ou totale."
+    answer: "Aujourd'hui de nombreuses mutuelles proposent un remboursement partiel ou total de plusieurs séances par an. Je vous invite à vous rapprocher de votre complémentaire santé."
   },
   {
     category: "Déontologie",
     question: "Les échanges sont-ils confidentiels ?",
-    answer: "Oui. Le secret professionnel s'applique."
+    answer: "Oui. Comme tout psychologue, je suis tenue au secret professionnel. Les échanges ont lieu dans un cadre confidentiel, respectueux de votre vie privée."
   },
   {
     category: "Pratique",
     question: "Puis-je annuler un rendez-vous ?",
-    answer: "Merci de prévenir au moins 48 heures à l'avance. Toute séance annulée moins de 48 heures avant le rendez-vous (hors cas de force majeure) reste due."
+    answer: "En cas d'empêchement, je vous remercie de me prévenir au moins 48 heures à l'avance afin de pouvoir proposer ce créneau à une autre personne. Toute séance annulée moins de 48 heures avant le rendez-vous, sauf cas de force majeure, reste due."
   }
 ];
 

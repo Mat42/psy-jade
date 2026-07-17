@@ -15,7 +15,7 @@ export default function ContactForm() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto space-y-4 mb-16 text-center">
           <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Contact &amp; Cabinet</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-charcoal">
+          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-terracotta">
             Prendre contact ou <span className="italic font-medium text-brand-sage font-serif">planifier un rendez-vous</span>
           </h2>
           <p className="font-sans text-brand-charcoal/65 text-sm sm:text-base leading-relaxed">
@@ -40,7 +40,7 @@ export default function ContactForm() {
                   <a href={`tel:${CABINET_INFO.phone}`} className="font-sans text-base font-semibold text-brand-sage hover:underline mt-1 block">
                     {CABINET_INFO.phone}
                   </a>
-                  <p className="font-sans text-[11px] text-brand-charcoal/50 mt-0.5">Ligne directe, laissez un message vocal ou SMS</p>
+                  <p className="font-sans text-[11px] text-brand-charcoal/50 mt-0.5">Si je ne suis pas disponible, n'hésitez pas à me laisser un message vocal ou un SMS. Je vous recontacterai dès que possible.</p>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
                     {CABINET_INFO.address}
                   </p>
                   <p className="font-sans text-[11px] text-brand-charcoal/50 mt-1">
-                    📍 Entrée juste après le portail violet. Stationnement disponible.
+                    📍 Entrée juste après le portail violet. Des places de stationnement sont disponibles dans l'enceinte de l'établissement.
                   </p>
                 </div>
               </div>

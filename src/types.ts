@@ -13,6 +13,7 @@ export interface SpecialtyItem {
   iconName: string;
   symptoms: string[];
   description: string;
+  link?: string;
 }
 
 export interface FAQItem {
