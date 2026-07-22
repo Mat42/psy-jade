@@ -23,7 +23,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-charcoal text-brand-beige border-t border-brand-charcoal pt-16 pb-12 text-left relative overflow-hidden">
+    <footer className="bg-brand-charcoal text-brand-cream border-t border-brand-charcoal pt-16 pb-12 text-left relative overflow-hidden">
       {/* Visual background lights */}
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-sage/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -37,13 +37,13 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-bold text-white tracking-tight">
               {CABINET_INFO.name}
             </h3>
-            <p className="font-sans text-xs text-brand-beige/60 font-semibold tracking-wider uppercase leading-snug">
+            <p className="font-sans text-xs text-brand-cream/60 font-semibold tracking-wider uppercase leading-snug">
               {CABINET_INFO.title}
             </p>
-            <p className="font-sans text-xs text-brand-beige/70 leading-relaxed">
+            <p className="font-sans text-xs text-brand-cream/70 leading-relaxed">
               Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
             </p>
-            <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-beige/50">
+            <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-cream/50">
               <span className="font-mono">{CABINET_INFO.rpps}</span>
               <span className="font-mono">{CABINET_INFO.siret}</span>
             </div>
@@ -66,7 +66,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="font-sans text-xs text-brand-beige/70 hover:text-white transition-colors flex items-center gap-1.5"
+                    className="font-sans text-xs text-brand-cream/70 hover:text-white transition-colors flex items-center gap-1.5"
                   >
                     <ArrowRight className="w-3 h-3 text-brand-terracotta" />
                     <span>{link.label}</span>
@@ -81,7 +81,7 @@ export default function Footer() {
             <h4 className="font-serif text-xs font-bold text-white uppercase tracking-widest">
               Horaires &amp; Consultations
             </h4>
-            <div className="space-y-2 text-xs text-brand-beige/70">
+            <div className="space-y-2 text-xs text-brand-cream/70">
               {CABINET_INFO.hours.map((h, idx) => (
                 <div key={idx} className="flex justify-between border-b border-brand-beige/5 pb-1 last:border-0 last:pb-0">
                   <span>{h.days}</span>
@@ -90,7 +90,7 @@ export default function Footer() {
               ))}
             </div>
             <div className="bg-brand-beige/5 p-3.5 rounded-lg border border-brand-beige/10">
-              <p className="font-sans text-[11px] text-brand-beige/60 leading-normal">
+              <p className="font-sans text-[11px] text-brand-cream/60 leading-normal">
                 📞 <strong>Urgence psychologique :</strong> Si vous faites face à une détresse aiguë immédiate en dehors de ces horaires, veuillez contacter le <strong>15 (SAMU)</strong> ou le <strong>3114</strong> (Numéro national de prévention du suicide).
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
               <Compass className="w-4 h-4 text-brand-terracotta" />
               <span>Accès &amp; Localisation</span>
             </h4>
-            <p className="font-sans text-xs text-brand-beige/70 leading-relaxed">
+            <p className="font-sans text-xs text-brand-cream/70 leading-relaxed">
               📍 <strong>{CABINET_INFO.address}</strong>
             </p>
             
@@ -110,7 +110,7 @@ export default function Footer() {
             <div className="bg-brand-charcoal/80 border border-brand-beige/10 rounded-xl p-3 space-y-2 relative">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold text-brand-sage uppercase tracking-wider">Plan de quartier</span>
-                <span className="text-[10px] text-brand-beige/40">Bus à proximité</span>
+                <span className="text-[10px] text-brand-cream/40">Bus à proximité</span>
               </div>
               
               {/* Minimalist Grid representing streets */}
@@ -131,7 +131,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <p className="font-sans text-[10px] text-brand-beige/60 leading-tight">
+              <p className="font-sans text-[10px] text-brand-cream/60 leading-tight">
                 🚗 <strong>Accès :</strong> Entrée juste après le portail violet. Stationnement disponible.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function Footer() {
         </div>
 
         {/* Lower Legal Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-beige/40 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-cream/40 gap-4">
           <div>
             <p>© {currentYear} Cabinet de Psychologie {CABINET_INFO.name}. Tous droits réservés.</p>
           </div>
@@ -150,7 +150,7 @@ export default function Footer() {
             <span>•</span>
             <span>Membre d'une association agréée</span>
             <span>•</span>
-            <span className="hover:text-brand-beige/70 cursor-pointer">Mentions Légales</span>
+            <span className="hover:text-brand-cream/70 cursor-pointer">Mentions Légales</span>
           </div>
         </div>
 

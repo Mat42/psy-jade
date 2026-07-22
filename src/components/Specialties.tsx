@@ -1,8 +1,18 @@
-import React from 'react';
-import { User, Heart, Briefcase, Building, ArrowRight, Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { User, Heart, Briefcase, Building, ArrowRight, Check, ChevronDown } from 'lucide-react';
 import { SPECIALTIES } from '../data';
 
 export default function Specialties() {
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
+
+  const toggleExpand = (id: string) => {
+    if (expandedCard === id) {
+      setExpandedCard(null);
+    } else {
+      setExpandedCard(id);
+    }
+  };
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'User': return <User className="w-5 h-5" />;
@@ -19,6 +29,7 @@ export default function Specialties() {
       className="py-20 sm:py-24 bg-brand-beige/50 border-y border-brand-sage/5 relative"
     >
       <div className="absolute top-0 right-0 w-80 h-80 bg-brand-cream/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Section Header */}
@@ -32,6 +43,8 @@ export default function Specialties() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {SPECIALTIES.map((spec) => {
+            const isExpanded = expandedCard === spec.id;
+
             return (
               <div
                 id={`specialty-card-${spec.id}`}
@@ -49,26 +62,42 @@ export default function Specialties() {
                       <p className="font-sans text-xs text-brand-sage font-medium">{spec.subtitle}</p>
                     </div>
                   </div>
+
                   <p className="font-sans text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed">
                     {spec.description}
                   </p>
 
                   {/* Motifs Section if present */}
                   {spec.symptoms && spec.symptoms.length > 0 && (
-                    <div className="pt-4 border-t border-brand-sage/10 space-y-3">
-                      <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider">
-                        Motifs :
-                      </h4>
-                      <ul className="space-y-2">
-                        {spec.symptoms.map((symp, i) => (
-                          <li key={i} className="flex items-start gap-2 text-xs text-brand-charcoal/85">
-                            <span className="mt-0.5 text-brand-terracotta flex-shrink-0">
-                              <Check className="w-3.5 h-3.5" />
-                            </span>
-                            <span>{symp}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="pt-4 border-t border-brand-sage/10">
+                      <button
+                        onClick={() => toggleExpand(spec.id)}
+                        className="w-full flex items-center justify-between group"
+                      >
+                        <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider group-hover:text-brand-terracotta transition-colors">
+                          Motifs de consultation
+                        </h4>
+                        <div className={`p-1 rounded-full bg-brand-beige text-brand-charcoal/50 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-brand-sage' : ''}`}>
+                          <ChevronDown className="w-3.5 h-3.5" />
+                        </div>
+                      </button>
+
+                      <div 
+                        className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                          isExpanded ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <ul className="space-y-2">
+                          {spec.symptoms.map((symp, i) => (
+                            <li key={i} className="flex items-start gap-2 text-xs text-brand-charcoal/85">
+                              <span className="mt-0.5 text-brand-terracotta flex-shrink-0">
+                                <Check className="w-3.5 h-3.5" />
+                              </span>
+                              <span>{symp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -78,8 +107,6 @@ export default function Specialties() {
                   <div className="p-6 bg-brand-beige/20 border-t border-brand-sage/5 rounded-b-2xl">
                     <a
                       href={spec.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-brand-beige border border-brand-sage/15 hover:border-brand-sage/30 hover:bg-brand-sage/5 text-brand-charcoal text-xs font-medium rounded-xl transition-all"
                     >
                       <span>En savoir plus</span>

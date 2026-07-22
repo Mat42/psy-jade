@@ -107,7 +107,7 @@ export default function ContactForm() {
                   href={CABINET_INFO.doctolibUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0596DE] hover:bg-[#047bb5] text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-sage hover:bg-brand-olive text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Ouvrir mon agenda Doctolib</span>

@@ -54,7 +54,14 @@ export const SPECIALTIES: SpecialtyItem[] = [
     subtitle: "Couples, familles et parentalité",
     iconName: "User",
     description: "Consulter un psychologue ne signifie pas que l'on est « faible » ou que l'on ne parvient plus à faire face. C'est avant tout s'accorder un temps pour comprendre ce qui se joue, mettre des mots sur ce qui est vécu et retrouver ses propres ressources.",
-    symptoms: [],
+    symptoms: [
+      "Stress, anxiété ou mal-être",
+      "Perte de confiance en soi",
+      "Séparation, deuil ou changement de vie",
+      "Difficultés relationnelles, familiales ou de couple",
+      "Épuisement lié aux responsabilités",
+      "Fausse couche, IMG ou deuil périnatal"
+    ],
     link: "#/annexe/3"
   },
   {
@@ -94,7 +101,14 @@ export const SPECIALTIES: SpecialtyItem[] = [
     subtitle: "Soutien et accompagnement sur mesure",
     iconName: "Building",
     description: "Parce que la qualité des relations humaines est un enjeu essentiel au sein des organisations, j'interviens auprès des entreprises, établissements médico-sociaux, associations et collectivités.",
-    symptoms: [],
+    symptoms: [
+      "Groupes de parole",
+      "Analyse de pratiques professionnelles",
+      "Accompagnement des équipes",
+      "Prévention des risques psychosociaux (RPS)",
+      "Soutien des managers et accompagnement du changement",
+      "Gestion des crises institutionnelles"
+    ],
     link: "#/annexe/6"
   }
 ];
