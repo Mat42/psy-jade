@@ -44,7 +44,7 @@ export default function Approaches() {
         {/* Header */}
         <div className="max-w-3xl mx-auto space-y-4 mb-16 text-center">
           <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Méthodologie</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-charcoal">
+          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal">
             Une approche respectueuse &amp; <span className="italic font-medium text-brand-sage font-serif">adaptative</span>
           </h2>
           <p className="font-sans text-brand-charcoal/65 text-sm sm:text-base leading-relaxed">

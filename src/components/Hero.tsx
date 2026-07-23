@@ -44,7 +44,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               <span>Psychologue – Thérapeute systémicienne</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-normal text-brand-terracotta leading-[1.1] tracking-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-normal text-brand-teal leading-[1.1] tracking-tight">
               Comprendre les liens, <span className="italic text-brand-sage font-medium font-serif">accompagner les changements.</span>
             </h1>
 
@@ -93,7 +93,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={(e) => handleCtaClick(e, '#contact')}
-                className="flex items-center justify-center gap-2 bg-brand-sage hover:bg-brand-olive text-brand-beige px-7 py-3.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="flex items-center justify-center gap-2 bg-brand-teal hover:bg-[#2A756C] text-white px-7 py-3.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Prendre un rendez-vous</span>
@@ -116,7 +116,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           {/* Visual Column */}
           <div className="lg:col-span-5 relative mt-8 lg:mt-0">
             {/* Elegant framing decoration */}
-            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brand-terracotta/40 rounded-tl-xl pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brand-teal/30 rounded-tl-xl pointer-events-none" />
             <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brand-sage/40 rounded-br-xl pointer-events-none" />
             
             {/* Main Office Image */}
@@ -135,7 +135,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 </div>
                 <a
                   href={`tel:${CABINET_INFO.phone}`}
-                  className="p-2.5 bg-brand-sage/10 text-brand-sage rounded-full hover:bg-brand-sage hover:text-white transition-colors"
+                  className="p-2.5 bg-brand-sage/10 text-brand-sage rounded-full hover:bg-brand-teal hover:text-white transition-colors"
                   title="Téléphoner au cabinet"
                 >
                   <Phone className="w-4 h-4" />

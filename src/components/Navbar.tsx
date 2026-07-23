@@ -90,7 +90,7 @@ export default function Navbar() {
               id="nav-cta-booking"
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="flex items-center gap-2 bg-brand-sage hover:bg-brand-olive text-brand-beige px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow"
+              className="flex items-center gap-2 bg-brand-teal hover:bg-[#2A756C] text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow"
             >
               <Calendar className="w-4 h-4" />
               <span>Prendre RDV</span>
@@ -119,7 +119,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="block px-3 py-2.5 rounded-lg text-base font-medium text-brand-charcoal hover:bg-brand-sage/5 hover:text-brand-sage transition-all"
+              className="block px-3 py-2.5 rounded-lg text-base font-medium text-brand-charcoal hover:bg-brand-teal/5 hover:text-brand-teal transition-all"
             >
               {link.label}
             </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="flex items-center justify-center gap-2 w-full bg-brand-sage hover:bg-brand-olive text-brand-beige py-2.5 rounded-lg text-sm font-medium transition-all shadow"
+              className="flex items-center justify-center gap-2 w-full bg-brand-teal hover:bg-[#2A756C] text-white py-2.5 rounded-lg text-sm font-medium transition-all shadow"
             >
               <Calendar className="w-4 h-4" />
               <span>Prendre Rendez-vous</span>

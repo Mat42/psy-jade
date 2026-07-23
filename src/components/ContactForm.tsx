@@ -15,7 +15,7 @@ export default function ContactForm() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto space-y-4 mb-16 text-center">
           <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Contact &amp; Cabinet</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-terracotta">
+          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal">
             Prendre contact ou <span className="italic font-medium text-brand-sage font-serif">planifier un rendez-vous</span>
           </h2>
           <p className="font-sans text-brand-charcoal/65 text-sm sm:text-base leading-relaxed">
@@ -107,7 +107,7 @@ export default function ContactForm() {
                   href={CABINET_INFO.doctolibUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-brand-sage hover:bg-brand-olive text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-teal hover:bg-[#2A756C] text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Ouvrir mon agenda Doctolib</span>

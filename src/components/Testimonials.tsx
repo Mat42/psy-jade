@@ -45,7 +45,7 @@ export default function Testimonials() {
             id={`testimonial-active-${activeIndex}`}
             className="transition-all duration-500 ease-in-out transform scale-100 opacity-100"
           >
-            <blockquote className="font-serif text-lg sm:text-xl md:text-2xl font-light text-brand-charcoal italic leading-relaxed max-w-3xl">
+            <blockquote className="font-serif text-lg sm:text-xl md:text-2xl font-light text-brand-teal italic leading-relaxed max-w-3xl">
               "{TESTIMONIALS[activeIndex].quote}"
             </blockquote>
             
@@ -63,7 +63,7 @@ export default function Testimonials() {
           <div className="flex items-center gap-4 mt-8">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full border border-brand-sage/20 bg-white hover:bg-brand-sage hover:text-white text-brand-charcoal transition-all shadow-sm"
+              className="p-2 rounded-full border border-brand-sage/20 bg-white hover:bg-brand-teal hover:text-white text-brand-charcoal transition-all shadow-sm"
               aria-label="Témoignage précédent"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -87,7 +87,7 @@ export default function Testimonials() {
 
             <button
               onClick={handleNext}
-              className="p-2 rounded-full border border-brand-sage/20 bg-white hover:bg-brand-sage hover:text-white text-brand-charcoal transition-all shadow-sm"
+              className="p-2 rounded-full border border-brand-sage/20 bg-white hover:bg-brand-teal hover:text-white text-brand-charcoal transition-all shadow-sm"
               aria-label="Témoignage suivant"
             >
               <ChevronRight className="w-4 h-4" />

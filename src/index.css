@@ -5,11 +5,12 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-beige: #FDD9BA;
-  --color-brand-sage: #3A6B58;
-  --color-brand-olive: #294D3F;
-  --color-brand-terracotta: #8B3A24;
-  --color-brand-cream: #FFF3E8;
+  --color-brand-beige: #FCFBF9;
+  --color-brand-sage: #84B5A5;
+  --color-brand-olive: #699788;
+  --color-brand-terracotta: #C67B66;
+  --color-brand-teal: #34897F;
+  --color-brand-cream: #F5EFEB;
   --color-brand-peach: #FDD9BA;
-  --color-brand-charcoal: #2C2420;
+  --color-brand-charcoal: #2A3632;
 }

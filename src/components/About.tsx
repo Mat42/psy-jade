@@ -13,7 +13,7 @@ export default function About() {
         <div className="space-y-6 text-left">
           <div className="space-y-3 text-center sm:text-left">
             <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Qui suis-je ?</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-terracotta leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal leading-tight">
               Mon <span className="italic font-medium text-brand-sage font-serif">parcours</span>
             </h2>
           </div>
@@ -28,7 +28,7 @@ export default function About() {
               href="#/annexe/1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-terracotta transition-colors font-medium text-sm pt-2"
+              className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
             >
               En savoir plus
               <ArrowRight className="w-4 h-4" />
@@ -40,7 +40,7 @@ export default function About() {
         <div className="space-y-6 text-left border-t border-brand-sage/10 pt-16">
           <div className="space-y-3 text-center sm:text-left">
             <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Mon approche</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-terracotta leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal leading-tight">
               Comprendre pour <span className="italic font-medium text-brand-sage font-serif">avancer</span>
             </h2>
           </div>
@@ -55,7 +55,7 @@ export default function About() {
               Ensemble, nous chercherons à mieux comprendre votre situation afin de retrouver un équilibre qui vous corresponde.
             </p>
             <div className="bg-brand-terracotta/5 p-6 rounded-xl mt-8 text-center sm:text-left">
-              <p className="font-serif text-lg text-brand-terracotta font-medium italic">
+              <p className="font-serif text-lg text-brand-teal font-medium italic">
                 Parce qu'aucune personne ne se construit seule, aucune difficulté ne se comprend seule.
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function About() {
               href="#/annexe/2"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-terracotta transition-colors font-medium text-sm pt-2"
+              className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
             >
               En savoir plus
               <ArrowRight className="w-4 h-4" />

@@ -23,27 +23,24 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-charcoal text-brand-cream border-t border-brand-charcoal pt-16 pb-12 text-left relative overflow-hidden">
-      {/* Visual background lights */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-sage/5 rounded-full blur-3xl pointer-events-none" />
-
+    <footer className="bg-brand-cream text-brand-charcoal border-t border-brand-sage/20 pt-16 pb-12 text-left relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid split */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-brand-beige/10 pb-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-brand-sage/20 pb-12 mb-12">
           
           {/* Col 1: Psychologist Info */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-bold text-white tracking-tight">
+            <h3 className="font-serif text-lg font-bold text-brand-charcoal tracking-tight">
               {CABINET_INFO.name}
             </h3>
-            <p className="font-sans text-xs text-brand-cream/60 font-semibold tracking-wider uppercase leading-snug">
+            <p className="font-sans text-xs text-brand-charcoal/60 font-semibold tracking-wider uppercase leading-snug">
               {CABINET_INFO.title}
             </p>
-            <p className="font-sans text-xs text-brand-cream/70 leading-relaxed">
+            <p className="font-sans text-xs text-brand-charcoal/70 leading-relaxed">
               Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
             </p>
-            <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-cream/50">
+            <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-charcoal/50">
               <span className="font-mono">{CABINET_INFO.rpps}</span>
               <span className="font-mono">{CABINET_INFO.siret}</span>
             </div>
@@ -51,7 +48,7 @@ export default function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-4">
-            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-widest">
+            <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
               Plan du site
             </h4>
             <ul className="space-y-2.5">
@@ -66,9 +63,9 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="font-sans text-xs text-brand-cream/70 hover:text-white transition-colors flex items-center gap-1.5"
+                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5"
                   >
-                    <ArrowRight className="w-3 h-3 text-brand-terracotta" />
+                    <ArrowRight className="w-3 h-3 text-brand-teal" />
                     <span>{link.label}</span>
                   </a>
                 </li>
@@ -78,19 +75,19 @@ export default function Footer() {
 
           {/* Col 3: Practical Hours */}
           <div className="space-y-4">
-            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-widest">
+            <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
               Horaires &amp; Consultations
             </h4>
-            <div className="space-y-2 text-xs text-brand-cream/70">
+            <div className="space-y-2 text-xs text-brand-charcoal/70">
               {CABINET_INFO.hours.map((h, idx) => (
-                <div key={idx} className="flex justify-between border-b border-brand-beige/5 pb-1 last:border-0 last:pb-0">
+                <div key={idx} className="flex justify-between border-b border-brand-sage/10 pb-1 last:border-0 last:pb-0">
                   <span>{h.days}</span>
-                  <span className="font-mono text-white">{h.hours}</span>
+                  <span className="font-mono text-brand-charcoal">{h.hours}</span>
                 </div>
               ))}
             </div>
-            <div className="bg-brand-beige/5 p-3.5 rounded-lg border border-brand-beige/10">
-              <p className="font-sans text-[11px] text-brand-cream/60 leading-normal">
+            <div className="bg-white/60 p-3.5 rounded-lg border border-brand-sage/20">
+              <p className="font-sans text-[11px] text-brand-charcoal/60 leading-normal">
                 📞 <strong>Urgence psychologique :</strong> Si vous faites face à une détresse aiguë immédiate en dehors de ces horaires, veuillez contacter le <strong>15 (SAMU)</strong> ou le <strong>3114</strong> (Numéro national de prévention du suicide).
               </p>
             </div>
@@ -98,19 +95,19 @@ export default function Footer() {
 
           {/* Col 4: Cabinet & Access directions (Compass) */}
           <div className="space-y-4">
-            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-widest flex items-center gap-1">
-              <Compass className="w-4 h-4 text-brand-terracotta" />
+            <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest flex items-center gap-1">
+              <Compass className="w-4 h-4 text-brand-teal" />
               <span>Accès &amp; Localisation</span>
             </h4>
-            <p className="font-sans text-xs text-brand-cream/70 leading-relaxed">
+            <p className="font-sans text-xs text-brand-charcoal/70 leading-relaxed">
               📍 <strong>{CABINET_INFO.address}</strong>
             </p>
             
             {/* Visual Mini MAP box simulation */}
-            <div className="bg-brand-charcoal/80 border border-brand-beige/10 rounded-xl p-3 space-y-2 relative">
+            <div className="bg-white/60 border border-brand-sage/20 rounded-xl p-3 space-y-2 relative">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-brand-sage uppercase tracking-wider">Plan de quartier</span>
-                <span className="text-[10px] text-brand-cream/40">Bus à proximité</span>
+                <span className="text-[10px] font-bold text-brand-teal uppercase tracking-wider">Plan de quartier</span>
+                <span className="text-[10px] text-brand-charcoal/50">Bus à proximité</span>
               </div>
               
               {/* Minimalist Grid representing streets */}
@@ -118,20 +115,20 @@ export default function Footer() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CABINET_INFO.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-16 bg-brand-charcoal border border-brand-beige/5 rounded relative overflow-hidden flex items-center justify-center hover:opacity-80 transition-opacity block cursor-pointer"
+                className="h-16 bg-[#e9e4df] border border-black/5 rounded relative overflow-hidden flex items-center justify-center hover:opacity-80 transition-opacity block cursor-pointer"
                 aria-label="Ouvrir dans Google Maps"
               >
                 {/* Horizontal road */}
-                <div className="absolute left-0 right-0 h-4 bg-brand-beige/5" />
+                <div className="absolute left-0 right-0 h-4 bg-white/90" />
                 {/* Vertical road */}
-                <div className="absolute top-0 bottom-0 w-4 bg-brand-beige/5 left-1/2 -translate-x-1/2" />
+                <div className="absolute top-0 bottom-0 w-4 bg-white/90 left-1/2 -translate-x-1/2" />
                 {/* Center marker */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-terracotta text-white p-1 rounded-full animate-pulse shadow-md z-10">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-terracotta text-white p-1 rounded-full shadow-sm z-10">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
               </a>
 
-              <p className="font-sans text-[10px] text-brand-cream/60 leading-tight">
+              <p className="font-sans text-[10px] text-brand-charcoal/60 leading-tight">
                 🚗 <strong>Accès :</strong> Entrée juste après le portail violet. Stationnement disponible.
               </p>
             </div>
@@ -140,7 +137,7 @@ export default function Footer() {
         </div>
 
         {/* Lower Legal Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-cream/40 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-charcoal/50 gap-4">
           <div>
             <p>© {currentYear} Cabinet de Psychologie {CABINET_INFO.name}. Tous droits réservés.</p>
           </div>
@@ -150,7 +147,7 @@ export default function Footer() {
             <span>•</span>
             <span>Membre d'une association agréée</span>
             <span>•</span>
-            <span className="hover:text-brand-cream/70 cursor-pointer">Mentions Légales</span>
+            <span className="hover:text-brand-charcoal cursor-pointer">Mentions Légales</span>
           </div>
         </div>
 

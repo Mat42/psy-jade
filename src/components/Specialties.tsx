@@ -35,7 +35,7 @@ export default function Specialties() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto space-y-4 mb-16 text-center">
           <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Champs d'intervention</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-terracotta">
+          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal">
             <span className="italic font-medium text-brand-sage font-serif">J'accompagne :</span>
           </h2>
         </div>

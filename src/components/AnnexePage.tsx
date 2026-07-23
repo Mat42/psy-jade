@@ -22,7 +22,7 @@ export default function AnnexePage({ id }: AnnexePageProps) {
       <div className="max-w-3xl mx-auto px-4 py-12 sm:py-20">
         <a 
           href="/" 
-          className="inline-flex items-center gap-2 text-brand-sage hover:text-brand-terracotta transition-colors mb-12 font-sans text-sm font-medium"
+          className="inline-flex items-center gap-2 text-brand-sage hover:text-brand-teal transition-colors mb-12 font-sans text-sm font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
           Retour à l'accueil
@@ -30,7 +30,7 @@ export default function AnnexePage({ id }: AnnexePageProps) {
 
         <article className="space-y-12">
           <header className="space-y-4">
-            <h1 className="font-serif text-4xl sm:text-5xl font-normal text-brand-terracotta leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl font-normal text-brand-teal leading-tight">
               {data.title}
             </h1>
             {data.subtitle && (
@@ -48,7 +48,7 @@ export default function AnnexePage({ id }: AnnexePageProps) {
 
           {(data.quote || data.quoteAuthor) && (
             <blockquote className="mt-16 pt-8 border-t border-brand-sage/20">
-              <p className="font-serif text-xl sm:text-2xl text-brand-terracotta italic text-center leading-relaxed">
+              <p className="font-serif text-xl sm:text-2xl text-brand-teal italic text-center leading-relaxed">
                 {data.quote}
               </p>
               <footer className="mt-4 text-center font-sans text-sm text-brand-charcoal/60 uppercase tracking-widest">
