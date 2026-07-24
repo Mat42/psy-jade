@@ -11,7 +11,13 @@ export default function AnnexePage({ id }: AnnexePageProps) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (data) {
+      document.title = `${data.title} | Jade Bourloux Psychologue`;
+    }
+    return () => {
+      document.title = "Jade Bourloux | Psychologue Clinicienne à Villefranche-sur-Saône";
+    };
+  }, [id, data]);
 
   if (!data) return null;
 
