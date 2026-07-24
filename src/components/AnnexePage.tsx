@@ -21,7 +21,7 @@ export default function AnnexePage({ id }: AnnexePageProps) {
     <div className="min-h-screen bg-brand-beige text-brand-charcoal selection:bg-brand-sage/20 selection:text-brand-charcoal">
       <div className="max-w-3xl mx-auto px-4 py-12 sm:py-20">
         <a 
-          href="/" 
+          href="#" 
           className="inline-flex items-center gap-2 text-brand-sage hover:text-brand-teal transition-colors mb-12 font-sans text-sm font-medium"
         >
           <ArrowLeft className="w-4 h-4" />

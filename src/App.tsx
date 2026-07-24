@@ -21,14 +21,20 @@ export default function App() {
 
   // Scroll to hash elements if present on load or direct navigation (for anchor links)
   useEffect(() => {
-    if (currentHash && !currentHash.startsWith('#/annexe/')) {
-      const id = currentHash;
-      const element = document.querySelector(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+    if (currentHash && currentHash !== '#' && currentHash !== '#/' && !currentHash.startsWith('#/annexe/')) {
+      try {
+        const id = currentHash;
+        const element = document.querySelector(id);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      } catch (e) {
+        // Ignore invalid selectors
       }
+    } else if (currentHash === '' || currentHash === '#' || currentHash === '#/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentHash]);
 
