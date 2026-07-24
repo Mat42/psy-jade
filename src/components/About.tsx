@@ -26,9 +26,8 @@ export default function About() {
             </p>
             <a 
               href="#/annexe/1"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
+              aria-label="En savoir plus sur mon parcours"
             >
               En savoir plus
               <ArrowRight className="w-4 h-4" />
@@ -61,9 +60,8 @@ export default function About() {
             </div>
             <a 
               href="#/annexe/2"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
+              aria-label="En savoir plus sur mon approche"
             >
               En savoir plus
               <ArrowRight className="w-4 h-4" />

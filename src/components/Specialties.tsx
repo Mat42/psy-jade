@@ -108,6 +108,7 @@ export default function Specialties() {
                     <a
                       href={spec.link}
                       className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-brand-beige border border-brand-sage/15 hover:border-brand-sage/30 hover:bg-brand-sage/5 text-brand-charcoal text-xs font-medium rounded-xl transition-all"
+                      aria-label={`En savoir plus sur : ${spec.title}`}
                     >
                       <span>En savoir plus</span>
                       <ArrowRight className="w-3.5 h-3.5" />

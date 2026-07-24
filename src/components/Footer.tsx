@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="space-y-4">
+          <nav className="space-y-4" aria-label="Plan du site">
             <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
               Plan du site
             </h4>
@@ -71,7 +71,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Col 3: Practical Hours */}
           <div className="space-y-4">

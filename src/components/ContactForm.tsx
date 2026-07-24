@@ -65,12 +65,14 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider">Adresse du Cabinet</h4>
-                  <p className="font-sans text-sm text-brand-charcoal leading-relaxed font-semibold mt-1">
-                    {CABINET_INFO.address}
-                  </p>
-                  <p className="font-sans text-[11px] text-brand-charcoal/50 mt-1">
-                    📍 Entrée juste après le portail violet. Des places de stationnement sont disponibles dans l'enceinte de l'établissement.
-                  </p>
+                  <address className="not-italic">
+                    <p className="font-sans text-sm text-brand-charcoal leading-relaxed font-semibold mt-1">
+                      {CABINET_INFO.address}
+                    </p>
+                    <p className="font-sans text-[11px] text-brand-charcoal/50 mt-1">
+                      📍 Entrée juste après le portail violet. Des places de stationnement sont disponibles dans l'enceinte de l'établissement.
+                    </p>
+                  </address>
                 </div>
               </div>
             </div>
