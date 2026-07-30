@@ -3,8 +3,8 @@ import { TherapyMethod, SpecialtyItem, FAQItem, TestimonialItem } from './types'
 export const CABINET_INFO = {
   name: "Jade Bourloux",
   title: "Psychologue clinicienne – Thérapeute",
-  rpps: "N° RPPS: 10112203913",
-  siret: "SIRET: 10799503700010",
+  rpps: "10112203913",
+  siret: "10799503700010",
   phone: "07 64 01 02 41",
   phoneFormatted: "+33 7 64 01 02 41",
   email: "jade.bourloux@gmail.com",

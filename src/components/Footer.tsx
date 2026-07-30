@@ -41,8 +41,8 @@ export default function Footer() {
               Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
             </p>
             <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-charcoal/50">
-              <span className="font-mono">{CABINET_INFO.rpps}</span>
-              <span className="font-mono">{CABINET_INFO.siret}</span>
+              <span className="font-mono">N° RPPS: {CABINET_INFO.rpps}</span>
+              <span className="font-mono">SIRET: {CABINET_INFO.siret}</span>
             </div>
           </div>
 
@@ -143,7 +143,7 @@ export default function Footer() {
           </div>
           
           <div className="flex gap-4 flex-wrap justify-center">
-            <span>Enregistrement ARS {CABINET_INFO.rpps}</span>
+            <span>Enregistrement ARS N° RPPS : {CABINET_INFO.rpps}</span>
             <span>•</span>
             <span>Membre d'une association agréée</span>
             <span>•</span>

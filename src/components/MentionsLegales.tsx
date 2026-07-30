@@ -46,9 +46,9 @@ export default function MentionsLegales() {
                 <h2 className="text-xl font-semibold text-brand-charcoal mb-3">Informations d'entreprise</h2>
                 <p>
                   <strong>SIREN :</strong> 107995037<br />
-                  <strong>SIRET :</strong> {CABINET_INFO.siret.replace('SIRET: ', '')}<br />
+                  <strong>SIRET :</strong> {CABINET_INFO.siret}<br />
                   <strong>Code APE :</strong> 86.90F (Activités de santé humaine non classées ailleurs)<br />
-                  <strong>Enregistrement ARS (RPPS) :</strong> {CABINET_INFO.rpps.replace('N° RPPS: ', '')}
+                  <strong>Enregistrement ARS (RPPS) :</strong> {CABINET_INFO.rpps}
                 </p>
               </section>
 
