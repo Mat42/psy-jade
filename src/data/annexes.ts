@@ -1,11 +1,13 @@
-export const annexes = {
+import { AnnexeData } from '../types';
+
+export const annexes: Record<string, AnnexeData> = {
   "1": {
     title: "Qui suis-je ?",
     content: `Je suis psychologue clinicienne depuis 2012, et j'accompagne les adultes, les couples, les familles, les aidants ainsi que les professionnels confrontés à des périodes de changement, de souffrance ou de questionnement.
 
 Au cours de mon parcours, j'ai exercé au sein de différentes structures médico-sociales et hospitalières (service d'oncologie, EHPAD, accueils de jour, résidences autonomie). Cette expérience m'a permis d'accompagner les personnes face à des situations de vulnérabilité, aux enjeux du vieillissement, de la perte d'autonomie, de la maladie ou du deuil, ainsi que leurs proches, souvent confrontés à des décisions difficiles et à une profonde charge émotionnelle.
 
-J'ai également travaillé aux côtés des équipes soignantes, dont je connais les réalités du quotidien, les exigences et l'investissement humain. En parallèle, mon engagement bénévole auprès de professionnels de santé m'a permis de contribuer à la formation des équipes au tact, à la bienveillance et l'humanisme dans leurs soins.
+J'ai également travaillé aux côtés des équipes soignantes, dont je connais les réalités du quotidien, les exigences et l'investissement humain. En parallèle, mon engagement bénévole auprès de professionnels de santé m'a permis de contribuer à la formation des équipes au tact, à la bienveillance et l’humanisme dans leurs soins.
 
 J'ai ensuite choisi d'élargir mon parcours en exerçant plusieurs années dans les ressources humaines. Cette expérience m'a offerte une compréhension concrète du monde du travail, des organisations, des relations professionnelles et des défis rencontrés par les salariés, les managers et les dirigeants. Elle nourrit aujourd'hui ma pratique auprès des personnes en souffrance au travail, en situation d'épuisement professionnel ou confrontées à des difficultés relationnelles dans leur environnement professionnel.
 
@@ -47,7 +49,6 @@ Je crois profondément que les difficultés ne définissent pas une personne. El
 Je vous accueille dans un espace d'écoute, de réflexion et d'échange, où nous pourrons prendre le temps d'explorer ensemble votre situation, dans le respect de votre histoire et de vos besoins, à votre rythme et sans jugement.
 
 Je peux notamment vous accompagner lorsque vous traversez :
-
 • une période de stress, d'anxiété ou un sentiment de mal-être ;
 • une perte de confiance en vous ou des difficultés d'estime de soi ;
 • une séparation, un deuil ou un changement de vie important ;
@@ -69,7 +70,6 @@ Chaque parcours est unique. Il n'existe pas de réponse universelle ni de chemin
 Ces changements concernent également les proches. Devenir aidant d'un parent, prendre des décisions importantes, accompagner une entrée en EHPAD ou faire face à une maladie neuro-évolutive peut être source d'épuisement, de culpabilité et de nombreuses émotions parfois difficiles à partager.
 
 Je propose un accompagnement destiné :
-
 • aux personnes qui avancent en âge et souhaitent traverser cette période avec un espace d'écoute et de soutien ;
 • aux aidants familiaux confrontés à la fatigue, aux doutes ou à la culpabilité ;
 • aux personnes et familles qui vivent une entrée en établissement, une perte d'autonomie ou une maladie neuro-évolutive ;
@@ -85,10 +85,9 @@ Il n'existe pas de « bonne manière » de vivre ces étapes de vie. Chacun les 
 
 Lorsqu'une difficulté professionnelle s'installe, elle dépasse souvent le cadre du travail. Elle peut avoir des répercussions sur la vie familiale, le sommeil, la santé, la confiance en soi ou les relations avec les autres.
 
-Au cours de mon parcours, j'ai exercé plusieurs années dans les ressources humaines. Cette expérience me permet de connaître concrètement les réalités du monde du travail, les enjeux des organisations et les responsabilités qui peuvent peser sur les salariés, les managers comme les dirigeants.
+Au cours de mon parcours, j'ai exercé plusieurs années dans les ressources humaines. Cette expérience me permet de connaître concrètement les réalités du monde du travail, les enjeux des organisations et les responsabilités qui peuvent peser sur les salariés, managers comme les dirigeants.
 
 Je vous accompagne notamment lorsque vous êtes confronté(e) à :
-
 • un épuisement professionnel (burn-out) ou un risque de burn-out ;
 • une perte de sens dans votre activité ;
 • un stress chronique ou une surcharge de travail ;
@@ -110,7 +109,6 @@ Parce que le travail fait partie de notre histoire de vie, il mérite lui aussi 
 J'interviens auprès des structures qui souhaitent offrir à leurs équipes un espace de réflexion, de prévention et d'accompagnement face aux réalités du terrain.
 
 J'interviens notamment pour :
-
 • l'animation de groupes de parole ;
 • les analyses de pratiques professionnelles ;
 • l'accompagnement des équipes confrontées à des situations complexes ;

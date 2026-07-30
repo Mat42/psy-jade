@@ -99,12 +99,12 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 <span>Prendre un rendez-vous</span>
               </button>
               
-              <button
-                onClick={(e) => handleCtaClick(e, '#approche')}
+              <a
+                href="#/annexe/2"
                 className="flex items-center justify-center gap-2 bg-transparent hover:bg-brand-charcoal/5 border border-brand-charcoal/20 text-brand-charcoal px-7 py-3.5 rounded-full text-sm font-medium transition-all"
               >
                 <span>Découvrir mon approche</span>
-              </button>
+              </a>
             </div>
 
             <div className="pt-2 text-xs text-brand-charcoal/50 flex items-center gap-2">

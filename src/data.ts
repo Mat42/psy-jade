@@ -4,10 +4,10 @@ export const CABINET_INFO = {
   name: "Jade Bourloux",
   title: "Psychologue clinicienne – Thérapeute",
   rpps: "N° RPPS: 10112203913",
-  siret: "SIRET: 812 345 678 00012",
-  phone: "04 74 12 34 56",
-  phoneFormatted: "+33 4 74 12 34 56",
-  email: "contact@jadebourloux-psychologue.fr",
+  siret: "SIRET: 10799503700010",
+  phone: "07 64 01 02 41",
+  phoneFormatted: "+33 7 64 01 02 41",
+  email: "jade.bourloux@gmail.com",
   address: "46 rue Alexandre Richetta, 69400 Villefranche-sur-Saône",
   shortAddress: "Villefranche-sur-Saône",
   hours: [
@@ -55,12 +55,12 @@ export const SPECIALTIES: SpecialtyItem[] = [
     iconName: "User",
     description: "Consulter un psychologue ne signifie pas que l'on est « faible » ou que l'on ne parvient plus à faire face. C'est avant tout s'accorder un temps pour comprendre ce qui se joue, mettre des mots sur ce qui est vécu et retrouver ses propres ressources.",
     symptoms: [
-      "Stress, anxiété ou mal-être",
-      "Perte de confiance en soi",
-      "Séparation, deuil ou changement de vie",
-      "Difficultés relationnelles, familiales ou de couple",
-      "Épuisement lié aux responsabilités",
-      "Fausse couche, IMG ou deuil périnatal"
+      "Stress, anxiété, mal-être",
+      "Perte de confiance en soi ; perte d’estime de soi",
+      "Séparation, deuils",
+      "Difficultés relationnelles de couple, familiales ou au travail",
+      "Deuil périnatal, parcours PMA, fausse couche",
+      "Epuisement lié aux responsabilités"
     ],
     link: "#/annexe/3"
   },
@@ -147,7 +147,7 @@ export const FAQS: FAQItem[] = [
   {
     category: "Pratique",
     question: "Puis-je annuler un rendez-vous ?",
-    answer: "En cas d'empêchement, je vous remercie de me prévenir au moins 48 heures à l'avance afin de pouvoir proposer ce créneau à une autre personne. Toute séance annulée moins de 48 heures avant le rendez-vous, sauf cas de force majeure, reste due."
+    answer: "En cas d'empêchement, je vous remercie de me prévenir au moins 48 heures à l'avance. Ce délai permet de proposer le créneau à une autre personne en attente d'un rendez-vous. Je vous remercie pour votre compréhension et votre respect de ce fonctionnement, qui contribue à assurer un accompagnement de qualité pour chacun."
   }
 ];
 

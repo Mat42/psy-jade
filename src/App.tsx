@@ -8,6 +8,8 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import AnnexePage from './components/AnnexePage';
 
+import MentionsLegales from './components/MentionsLegales';
+
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
 
@@ -21,7 +23,7 @@ export default function App() {
 
   // Scroll to hash elements if present on load or direct navigation (for anchor links)
   useEffect(() => {
-    if (currentHash && currentHash !== '#' && currentHash !== '#/' && !currentHash.startsWith('#/annexe/')) {
+    if (currentHash && currentHash !== '#' && currentHash !== '#/' && !currentHash.startsWith('#/annexe/') && currentHash !== '#/mentions-legales') {
       try {
         const id = currentHash;
         const element = document.querySelector(id);
@@ -37,6 +39,11 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentHash]);
+
+  // Handle Mentions Légales route
+  if (currentHash === '#/mentions-legales') {
+    return <MentionsLegales />;
+  }
 
   // Handle Annexe routes
   if (currentHash.startsWith('#/annexe/')) {

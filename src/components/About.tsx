@@ -19,10 +19,10 @@ export default function About() {
           </div>
           <div className="prose prose-brand max-w-none font-sans text-brand-charcoal/75 leading-relaxed text-base space-y-4">
             <p>
-              Psychologue diplômée depuis 2012, j'ai travaillé de nombreuses années dans le secteur médico-social. Cela m'a permis de travailler auprès des patients, de leurs familles, des équipes soignantes, et de la direction. J'ai également exercé plusieurs années dans les ressources humaines, ce qui me permet de porter un regard éclairé sur les réalités du monde du travail.
+              Psychologue diplômée depuis 2012, j’ai travaillé de nombreuses années dans le secteur hospitalier et gériatrique. Cela m’a permis de travailler auprès des patients, de leurs familles, des équipes soignantes, et de la direction. J’ai également exercé plusieurs années dans les ressources humaines, ce qui me permet de porter un regard éclairé sur les réalités du monde du travail.
             </p>
             <p>
-              Aujourd'hui, je mets ces expériences au service des personnes que j'accompagne.
+              Aujourd'hui, forte de ces expériences, je souhaite les mettre au service des personnes et entreprises que j'accompagne.
             </p>
             <a 
               href="#/annexe/1"

@@ -143,11 +143,11 @@ export default function Footer() {
           </div>
           
           <div className="flex gap-4 flex-wrap justify-center">
-            <span>Enregistrement ARS RPPS : {CABINET_INFO.rpps.split(': ')[1]}</span>
+            <span>Enregistrement ARS {CABINET_INFO.rpps}</span>
             <span>•</span>
             <span>Membre d'une association agréée</span>
             <span>•</span>
-            <span className="hover:text-brand-charcoal cursor-pointer">Mentions Légales</span>
+            <a href="#/mentions-legales" className="hover:text-brand-charcoal cursor-pointer">Mentions Légales</a>
           </div>
         </div>
 
