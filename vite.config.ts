@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: '/psy-jade/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
