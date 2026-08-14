@@ -1,5 +1,6 @@
 import { CheckCircle2, Award, BookOpen, Quote, ArrowRight } from 'lucide-react';
 import { CABINET_INFO } from '../data';
+import profileImage from '../assets/images/profile.webp';
 
 export default function About() {
   return (
@@ -14,7 +15,7 @@ export default function About() {
           <div className="md:col-span-4 order-first md:order-last">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm border border-brand-sage/10">
               <img 
-                src="/profile.webp" 
+                src={profileImage} 
                 alt="Portrait Jade Bourloux" 
                 className="w-full h-full object-cover"
               />

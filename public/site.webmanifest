@@ -6,5 +6,16 @@
   "background_color": "#EBE6DF",
   "theme_color": "#EBE6DF",
   "description": "Cabinet de psychologie de Jade Bourloux à Villefranche-sur-Saône",
-  "icons": []
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

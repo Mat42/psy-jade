@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar } from 'lucide-react';
 import { CABINET_INFO } from '../data';
+import logoImage from '../assets/images/logo.webp';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function Navbar() {
           {/* Logo / Brand Name */}
           <div className="flex items-center gap-3">
             <a href="#accueil" onClick={(e) => handleLinkClick(e, '#accueil')} className="flex-shrink-0">
-              <img src="/logo.webp" alt="Logo Jade Bourloux" className="w-12 h-12 object-contain rounded-full" />
+              <img src={logoImage} alt="Logo Jade Bourloux" className="w-12 h-12 object-contain rounded-full" />
             </a>
             <div className="flex flex-col">
               <a 
