@@ -57,17 +57,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo / Brand Name */}
-          <div className="flex flex-col">
-            <a 
-              href="#accueil" 
-              onClick={(e) => handleLinkClick(e, '#accueil')}
-              className="font-serif text-xl sm:text-2xl font-semibold text-brand-charcoal hover:text-brand-sage transition-colors leading-tight tracking-tight"
-            >
-              {CABINET_INFO.name}
+          <div className="flex items-center gap-3">
+            <a href="#accueil" onClick={(e) => handleLinkClick(e, '#accueil')} className="flex-shrink-0">
+              <img src="/logo.webp" alt="Logo Jade Bourloux" className="w-12 h-12 object-contain rounded-full" />
             </a>
-            <span className="font-sans text-[10px] sm:text-xs tracking-widest text-brand-sage uppercase font-medium mt-0.5">
-              {CABINET_INFO.title}
-            </span>
+            <div className="flex flex-col">
+              <a 
+                href="#accueil" 
+                onClick={(e) => handleLinkClick(e, '#accueil')}
+                className="font-serif text-xl sm:text-2xl font-semibold text-brand-charcoal hover:text-brand-sage transition-colors leading-tight tracking-tight"
+              >
+                {CABINET_INFO.name}
+              </a>
+              <span className="font-sans text-[10px] sm:text-xs tracking-widest text-brand-sage uppercase font-medium mt-0.5">
+                {CABINET_INFO.title}
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

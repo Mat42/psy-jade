@@ -10,28 +10,42 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Qui suis-je ? */}
-        <div className="space-y-6 text-left">
-          <div className="space-y-3 text-center sm:text-left">
-            <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Qui suis-je ?</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal leading-tight">
-              Mon <span className="italic font-medium text-brand-sage font-serif">parcours</span>
-            </h2>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-4 order-first md:order-last">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm border border-brand-sage/10">
+              <img 
+                src="/profile.webp" 
+                alt="Portrait Jade Bourloux" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-brand-charcoal/5 pointer-events-none"></div>
+            </div>
           </div>
-          <div className="prose prose-brand max-w-none font-sans text-brand-charcoal/75 leading-relaxed text-base space-y-4">
-            <p>
-              Psychologue diplômée depuis 2012, j’ai travaillé de nombreuses années dans le secteur hospitalier et gériatrique. Cela m’a permis de travailler auprès des patients, de leurs familles, des équipes soignantes, et de la direction. J’ai également exercé plusieurs années dans les ressources humaines, ce qui me permet de porter un regard éclairé sur les réalités du monde du travail.
-            </p>
-            <p>
-              Aujourd'hui, forte de ces expériences, je souhaite les mettre au service des personnes et entreprises que j'accompagne.
-            </p>
-            <a 
-              href="#/annexe/1"
-              className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
-              aria-label="En savoir plus sur mon parcours"
-            >
-              En savoir plus
-              <ArrowRight className="w-4 h-4" />
-            </a>
+          
+          <div className="md:col-span-8 space-y-6 text-left">
+            <div className="space-y-3 text-center sm:text-left">
+              <span className="font-sans text-xs font-semibold tracking-widest text-brand-terracotta uppercase">Qui suis-je ?</span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-brand-teal leading-tight">
+                Mon <span className="italic font-medium text-brand-sage font-serif">parcours</span>
+              </h2>
+            </div>
+            
+            <div className="prose prose-brand max-w-none font-sans text-brand-charcoal/75 leading-relaxed text-base space-y-4">
+              <p>
+                Psychologue diplômée depuis 2012, j’ai travaillé de nombreuses années dans le secteur hospitalier et gériatrique. Cela m’a permis de travailler auprès des patients, de leurs familles, des équipes soignantes, et de la direction. J’ai également exercé plusieurs années dans les ressources humaines, ce qui me permet de porter un regard éclairé sur les réalités du monde du travail.
+              </p>
+              <p>
+                Aujourd'hui, forte de ces expériences, je souhaite les mettre au service des personnes et entreprises que j'accompagne.
+              </p>
+              <a 
+                href="#/annexe/1"
+                className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
+                aria-label="En savoir plus sur mon parcours"
+              >
+                En savoir plus
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
