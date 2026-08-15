@@ -1,6 +1,6 @@
 import { CheckCircle2, Award, BookOpen, Quote, ArrowRight } from 'lucide-react';
 import { CABINET_INFO } from '../data';
-import profileImage from '../assets/images/profile.webp';
+import profileImage from '../assets/images/profile.jpeg';
 
 export default function About() {
   return (
