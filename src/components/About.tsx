@@ -13,13 +13,19 @@ export default function About() {
         {/* Qui suis-je ? */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-4 order-first md:order-last">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm border border-brand-sage/10">
-              <img 
-                src={profileImage} 
-                alt="Portrait Jade Bourloux" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-brand-charcoal/5 pointer-events-none"></div>
+            <div className="relative">
+              {/* Elegant framing decoration */}
+              <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brand-teal/30 rounded-tl-xl pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brand-sage/40 rounded-br-xl pointer-events-none" />
+              
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-brand-cream/30">
+                <img 
+                  src={profileImage} 
+                  alt="Portrait Jade Bourloux" 
+                  className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-brand-charcoal/5 pointer-events-none"></div>
+              </div>
             </div>
           </div>
           
