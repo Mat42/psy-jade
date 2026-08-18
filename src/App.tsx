@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -42,13 +43,23 @@ export default function App() {
 
   // Handle Mentions Légales route
   if (currentHash === '#/mentions-legales') {
-    return <MentionsLegales />;
+    return (
+      <>
+        <MentionsLegales />
+        <Analytics />
+      </>
+    );
   }
 
   // Handle Annexe routes
   if (currentHash.startsWith('#/annexe/')) {
     const annexeId = currentHash.replace('#/annexe/', '');
-    return <AnnexePage id={annexeId} />;
+    return (
+      <>
+        <AnnexePage id={annexeId} />
+        <Analytics />
+      </>
+    );
   }
 
   return (
@@ -73,6 +84,7 @@ export default function App() {
 
       {/* Universal professional footer */}
       <Footer />
+      <Analytics />
     </div>
   );
 }
