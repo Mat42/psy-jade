@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, Phone, Shield, MapPin, Award } from 'lucide-react';
 import { CABINET_INFO } from '../data';
-import therapyOfficeImg from '../assets/images/therapy_office_1783681138701.jpg';
+import therapyOfficeImg from '../assets/images/empty_therapy_office_1787307343952.jpg';
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
