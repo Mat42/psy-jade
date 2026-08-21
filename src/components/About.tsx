@@ -23,6 +23,7 @@ export default function About() {
                   src={profileImage} 
                   alt="Portrait Jade Bourloux" 
                   className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-brand-charcoal/5 pointer-events-none"></div>
               </div>
