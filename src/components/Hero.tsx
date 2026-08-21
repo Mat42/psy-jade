@@ -123,7 +123,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] lg:aspect-[3/4] bg-brand-cream/30">
               <img
                 src={therapyOfficeImg}
-                alt={`Cabinet de psychologie de ${CABINET_INFO.name}`}
+                alt="Cabinet de psychologie de Jade Bourloux à Villefranche-sur-Saône"
                 className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700"
                 referrerPolicy="no-referrer"
                 fetchPriority="high"

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jadebourloux-psychologue.fr/sitemap.xml
+Sitemap: https://jadebourloux.fr/sitemap.xml
