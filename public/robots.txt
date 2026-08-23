@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jadebourloux.fr/sitemap.xml
+Sitemap: https://www.jadebourloux.fr/sitemap.xml
