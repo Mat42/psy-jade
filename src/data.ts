@@ -12,7 +12,7 @@ export const CABINET_INFO = {
   shortAddress: "Villefranche-sur-Saône",
   hours: [
     { days: "Lundi - Vendredi", hours: "08:30 - 19:30" },
-    { days: "Samedi", hours: "09:00 - 13:00" },
+    { days: "Samedi", hours: "08:30 - 12:30" },
     { days: "Dimanche", hours: "Fermé" }
   ],
   doctolibUrl: "https://www.doctolib.fr", // Standard platform in France
