@@ -65,6 +65,22 @@ export const SPECIALTIES: SpecialtyItem[] = [
     link: "#/annexe/3"
   },
   {
+    id: "adolescents",
+    title: "Accompagnement des adolescents",
+    subtitle: "Grandir, se chercher, trouver sa place…",
+    iconName: "User",
+    description: "L’adolescence est une période de transformation, de découvertes et de questionnements. C’est aussi parfois une période de fragilité, où il devient difficile de comprendre ce que l’on ressent ou de trouver sa place parmi les autres.",
+    symptoms: [
+      "Difficultés liées aux relations amicales ou amoureuses",
+      "Difficultés à trouver sa place au sein de la famille ou à l'école",
+      "Manque de confiance en soi ou difficultés avec l'image de soi",
+      "Anxiété, stress, changement de comportement",
+      "Tristesse, perte d’envie ou de motivation",
+      "Colère, irritabilité ou difficultés à gérer ses émotions"
+    ],
+    link: "#/annexe/7"
+  },
+  {
     id: "vieillissement",
     title: "Vieillissement, aidants et familles",
     subtitle: "Accompagnement et soutien",

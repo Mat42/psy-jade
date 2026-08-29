@@ -129,5 +129,52 @@ Je me déplace au sein des entreprises, établissements et associations, ou peux
 N'hésitez pas à me contacter afin d'échanger sur votre projet ou vos besoins d'accompagnement.`,
     quote: "« Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la réussite. »",
     quoteAuthor: "Henry Ford"
+  },
+  "7": {
+    title: "Accompagnement des adolescents",
+    subtitle: "Un espace pour pouvoir parler… même quand on ne sait pas quoi dire.",
+    content: `L’adolescence est une période particulière, entre l’enfance et l’âge adulte. Le corps change, les relations évoluent, les attentes se multiplient et les questions sur soi, sur les autres et sur l’avenir prennent parfois beaucoup de place.
+
+Pour certains adolescents, cette période se traverse facilement. Pour d’autres, elle peut être source de doutes, de tensions ou de souffrance.
+
+Il n’est pas toujours simple de dire à ses parents que l’on ne va pas bien. Et parfois, on ne sait tout simplement pas comment expliquer ce que l’on ressent.
+
+Le cabinet peut alors devenir un espace différent : un endroit où l’adolescent peut déposer ce qu’il vit, sans avoir à protéger ses parents, à rassurer son entourage ou à donner une « bonne » réponse.
+
+Pourquoi consulter ?
+Une consultation peut être envisagée lorsque vous observez un changement chez votre adolescent ou lorsqu’il exprime lui-même le besoin d’être accompagné.
+
+Les motifs peuvent être très variés et concerner aussi bien la relation au corps, la relation aux autres, le rapport à l’alimentation, la confiance en soi ou encore la projection dans l’avenir.
+
+Ou bien, parfois, il n’y a pas de raison précise. Simplement le sentiment que quelque chose a changé, que l’adolescent semble moins bien ou que le dialogue devient difficile.
+
+Il n’est pas nécessaire d’attendre que la situation devienne trop difficile pour demander de l’aide.
+
+Un accompagnement à son rythme
+Je propose à l’adolescent un espace qui lui appartient, dans lequel il peut parler librement de ce qu’il souhaite, à son rythme.
+
+Je ne suis pas là pour lui dire ce qu’il doit faire, ni pour prendre parti entre lui et ses parents.
+
+Mon rôle est de l’accompagner pour comprendre ce qu’il traverse, mettre des mots sur ce qui peut parfois être difficile à exprimer, identifier ses ressources et retrouver progressivement un équilibre qui lui corresponde.
+
+L’approche systémique que je propose permet également de prendre en compte son environnement : sa famille, ses relations, l’école, ses amis et les différents événements qui peuvent influencer son quotidien.
+
+Et les parents dans tout ça ?
+Lorsqu’un adolescent consulte, les parents ont naturellement une place importante.
+
+Une première rencontre peut permettre de faire le point sur la situation et de comprendre ce qui amène à consulter. Selon les besoins, certains temps peuvent être proposés avec les parents, tandis que les séances individuelles permettent à l’adolescent de bénéficier d’un véritable espace de confidentialité.
+
+L’objectif est de construire ensemble un espace de parole où chacun peut trouver sa place et avancer vers un objectif commun, sereinement.
+
+Il n’est pas nécessaire d’avoir toutes les réponses avant de prendre rendez-vous. Si vous vous interrogez sur ce que traverse votre adolescent, une première rencontre peut simplement permettre d’en parler et de voir ensemble ce qui serait le plus adapté.
+
+Pour les adolescents… et pour leurs parents
+Consulter un psychologue n’est pas forcément une démarche évidente pour un adolescent.
+
+Il peut être réticent, penser qu’il n’a « rien à dire », ou ne pas comprendre pourquoi ses parents souhaitent qu’il rencontre quelqu’un.
+
+C’est pourquoi je veille à construire progressivement une relation de confiance et à définir avec lui un objectif auquel il souhaite répondre.
+
+Parler, comprendre, mettre des mots, retrouver confiance et avancer : chacun peut avoir son propre rythme.`
   }
 };

@@ -41,7 +41,7 @@ export default function Specialties() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SPECIALTIES.map((spec) => {
             const isExpanded = expandedCard === spec.id;
 
