@@ -15,7 +15,7 @@ export const CABINET_INFO = {
     { days: "Samedi", hours: "08:30 - 12:30" },
     { days: "Dimanche", hours: "Fermé" }
   ],
-  doctolibUrl: "https://www.doctolib.fr", // Standard platform in France
+  doctolibUrl: "https://www.doctolib.fr/psychologue/villefranche-sur-saone/jade-bourloux",
   lat: 45.9833,
   lng: 4.7167
 };
