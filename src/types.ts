@@ -53,3 +53,4 @@ export interface ContactMessage {
   message: string;
   submittedAt: string;
 }
+export interface AnnexeData { title: string; subtitle?: string; content: string; quote?: string; quoteAuthor?: string; }
