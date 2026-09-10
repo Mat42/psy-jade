@@ -129,7 +129,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 fetchPriority="high"
               />
               {/* Overlapping Info card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/40 flex items-center justify-between">
+              <div className="absolute top-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/40 flex items-center justify-between">
                 <div>
                   <p className="font-serif text-sm font-medium text-brand-charcoal">Cabinet de Villefranche</p>
                   <p className="font-sans text-[11px] text-brand-charcoal/60">Un cadre serein, propice à l'apaisement</p>
