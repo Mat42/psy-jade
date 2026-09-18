@@ -20,32 +20,49 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Accueil', href: '#accueil' },
-    { label: 'Approche', href: '#approche' },
-    { label: 'Pour qui ?', href: '#pour-qui' },
-    { label: 'Tarifs & Séance', href: '#tarifs' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'Approche', href: '/#approche' },
+    { label: 'Pour qui ?', href: '/#pour-qui' },
+    { label: 'Tarifs & Séance', href: '/#tarifs' },
+    { label: 'FAQ', href: '/#faq' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80; // height of fixed navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+    // If target is home
+    if (href === '/' || href === '#accueil' || href === '/#accueil') {
+      window.history.pushState({}, '', '/');
+      window.dispatchEvent(new Event('popstate'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // If target is an anchor section on the home page (e.g. /#approche or #contact)
+    const hash = href.startsWith('/') ? href.substring(1) : href; // e.g. '#approche'
+    const isHome = window.location.pathname === '/' || window.location.pathname === '';
+
+    if (isHome) {
+      window.history.pushState({}, '', `/${hash}`);
+      const element = document.querySelector(hash);
+      if (element) {
+        const offset = 80; // height of fixed navbar
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
     } else {
-      // Not on home page, change hash to navigate home and scroll to section
-      window.location.hash = href;
+      // From subpages (like /qui-suis-je/), navigate to home with the target anchor
+      window.history.pushState({}, '', `/${hash}`);
+      window.dispatchEvent(new Event('popstate'));
     }
   };
 
@@ -62,14 +79,20 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo / Brand Name */}
           <div className="flex items-center gap-3">
-            <a href="#accueil" onClick={(e) => handleLinkClick(e, '#accueil')} className="flex-shrink-0">
+            <a 
+              href="/" 
+              onClick={(e) => handleLinkClick(e, '/')} 
+              className="flex-shrink-0"
+              aria-label="Retour à l'accueil"
+            >
               <img src={logoImage} alt="Logo Jade Bourloux" className="w-12 h-12 object-contain rounded-full" />
             </a>
             <div className="flex flex-col">
               <a 
-                href="#accueil" 
-                onClick={(e) => handleLinkClick(e, '#accueil')}
+                href="/" 
+                onClick={(e) => handleLinkClick(e, '/')}
                 className="font-serif text-xl sm:text-2xl font-semibold text-brand-charcoal hover:text-brand-sage transition-colors leading-tight tracking-tight"
+                aria-label="Jade Bourloux - Retour à l'accueil"
               >
                 {CABINET_INFO.name}
               </a>
@@ -97,8 +120,8 @@ export default function Navbar() {
             {/* Booking CTA */}
             <a
               id="nav-cta-booking"
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, '#contact')}
+              href="/#contact"
+              onClick={(e) => handleLinkClick(e, '/#contact')}
               className="flex items-center gap-2 bg-brand-teal hover:bg-[#2A756C] text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow"
             >
               <Calendar className="w-4 h-4" />
@@ -135,8 +158,8 @@ export default function Navbar() {
           ))}
           <div className="pt-4 border-t border-brand-sage/10 flex flex-col gap-3 px-3">
             <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, '#contact')}
+              href="/#contact"
+              onClick={(e) => handleLinkClick(e, '/#contact')}
               className="flex items-center justify-center gap-2 w-full bg-brand-teal hover:bg-[#2A756C] text-white py-2.5 rounded-lg text-sm font-medium transition-all shadow"
             >
               <Calendar className="w-4 h-4" />

@@ -22,6 +22,12 @@ function parseCurrentRoute(): ParsedRoute {
   const hash = window.location.hash || '';
   const pathname = window.location.pathname.replace(/\/+$/, '') || '';
 
+  // Home section anchors always belong to the home page
+  const homeAnchors = ['#accueil', '#approche', '#pour-qui', '#tarifs', '#faq', '#contact'];
+  if (homeAnchors.includes(hash)) {
+    return { type: 'home', anchor: hash === '#accueil' ? undefined : hash };
+  }
+
   // Check pathname (for direct visits to pre-rendered static HTML routes)
   const cleanPath = pathname.replace(/^\//, '');
   if (cleanPath === 'mentions-legales') {
@@ -49,7 +55,7 @@ function parseCurrentRoute(): ParsedRoute {
     return { type: 'annexe', annexeId: cleanHash };
   }
 
-  // Anchor navigation on home page (e.g. #contact, #tarifs, #approche)
+  // Generic anchor navigation on home page
   if (hash && hash.startsWith('#') && !hash.startsWith('#/')) {
     return { type: 'home', anchor: hash };
   }
@@ -61,6 +67,17 @@ export default function App() {
   const [route, setRoute] = useState<ParsedRoute>(parseCurrentRoute);
 
   useEffect(() => {
+    // If arriving with a home anchor on a subpage path (e.g. /qui-suis-je/#accueil or /qui-suis-je/#contact),
+    // normalize the browser URL to root
+    const hash = window.location.hash;
+    const pathname = window.location.pathname.replace(/\/+$/, '');
+    const homeAnchors = ['#accueil', '#approche', '#pour-qui', '#tarifs', '#faq', '#contact'];
+
+    if (pathname && homeAnchors.includes(hash)) {
+      const newUrl = hash === '#accueil' ? '/' : `/${hash}`;
+      window.history.replaceState({}, '', newUrl);
+    }
+
     // Automatically clean up legacy hash URLs (e.g. #/qui-suis-je -> /qui-suis-je/)
     if (window.location.hash.startsWith('#/')) {
       const current = parseCurrentRoute();
