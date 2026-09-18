@@ -19,7 +19,7 @@ export default function MentionsLegales() {
       <main className="flex-grow pt-32 pb-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <a
-            href="#/"
+            href="/"
             className="inline-flex items-center gap-2 text-brand-sage hover:text-brand-teal transition-colors text-sm font-medium"
           >
             <ArrowLeft className="w-4 h-4" />

@@ -9,41 +9,145 @@ import FAQTarifs from './components/FAQTarifs';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import AnnexePage from './components/AnnexePage';
-
 import MentionsLegales from './components/MentionsLegales';
+import { getAnnexeBySlugOrId } from './data/annexes';
+
+interface ParsedRoute {
+  type: 'home' | 'mentions-legales' | 'annexe';
+  annexeId?: string;
+  anchor?: string;
+}
+
+function parseCurrentRoute(): ParsedRoute {
+  const hash = window.location.hash || '';
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '';
+
+  // Check pathname (for direct visits to pre-rendered static HTML routes)
+  const cleanPath = pathname.replace(/^\//, '');
+  if (cleanPath === 'mentions-legales') {
+    return { type: 'mentions-legales' };
+  }
+  if (cleanPath && getAnnexeBySlugOrId(cleanPath)) {
+    return { type: 'annexe', annexeId: cleanPath };
+  }
+
+  // Check hash
+  if (hash === '#/mentions-legales' || hash === '#mentions-legales') {
+    return { type: 'mentions-legales' };
+  }
+
+  if (hash.startsWith('#/annexe/')) {
+    const rawId = hash.replace('#/annexe/', '');
+    return { type: 'annexe', annexeId: rawId };
+  }
+
+  const cleanHash = hash.replace(/^#\/?/, '');
+  if (cleanHash === 'mentions-legales') {
+    return { type: 'mentions-legales' };
+  }
+  if (cleanHash && getAnnexeBySlugOrId(cleanHash)) {
+    return { type: 'annexe', annexeId: cleanHash };
+  }
+
+  // Anchor navigation on home page (e.g. #contact, #tarifs, #approche)
+  if (hash && hash.startsWith('#') && !hash.startsWith('#/')) {
+    return { type: 'home', anchor: hash };
+  }
+
+  return { type: 'home' };
+}
 
 export default function App() {
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const [route, setRoute] = useState<ParsedRoute>(parseCurrentRoute);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
+    // Automatically clean up legacy hash URLs (e.g. #/qui-suis-je -> /qui-suis-je/)
+    if (window.location.hash.startsWith('#/')) {
+      const current = parseCurrentRoute();
+      if (current.type === 'annexe' && current.annexeId) {
+        const found = getAnnexeBySlugOrId(current.annexeId);
+        if (found) {
+          window.history.replaceState({}, '', `/${found.slug}/`);
+        }
+      } else if (current.type === 'mentions-legales') {
+        window.history.replaceState({}, '', '/mentions-legales/');
+      } else if (current.type === 'home') {
+        window.history.replaceState({}, '', '/');
+      }
+    }
+
+    const handleRouteChange = () => {
+      setRoute(parseCurrentRoute());
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    const handleDocumentClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const anchor = target?.closest('a');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      // Let external links, anchors, and protocols handle normally
+      if (
+        anchor.target === '_blank' ||
+        href.startsWith('http://') ||
+        href.startsWith('https://') ||
+        href.startsWith('tel:') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('#')
+      ) {
+        return;
+      }
+
+      // Intercept root & internal clean path navigations
+      if (href.startsWith('/')) {
+        e.preventDefault();
+        window.history.pushState({}, '', href);
+        setRoute(parseCurrentRoute());
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+      document.removeEventListener('click', handleDocumentClick);
+    };
   }, []);
 
-  // Scroll to hash elements if present on load or direct navigation (for anchor links)
+  // Handle in-page anchor scrolling when on the home page
   useEffect(() => {
-    if (currentHash && currentHash !== '#' && currentHash !== '#/' && !currentHash.startsWith('#/annexe/') && currentHash !== '#/mentions-legales') {
+    if (route.type === 'home' && route.anchor) {
       try {
-        const id = currentHash;
-        const element = document.querySelector(id);
+        const element = document.querySelector(route.anchor);
         if (element) {
           setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }, 100);
+            const offset = 80;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth',
+            });
+          }, 120);
         }
       } catch (e) {
-        // Ignore invalid selectors
+        // Ignore invalid selector
       }
-    } else if (currentHash === '' || currentHash === '#' || currentHash === '#/') {
+    } else if (route.type === 'home' && !route.anchor) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [currentHash]);
+  }, [route]);
 
-  // Handle Mentions Légales route
-  if (currentHash === '#/mentions-legales') {
+  // Route: Mentions Légales
+  if (route.type === 'mentions-legales') {
     return (
       <>
         <MentionsLegales />
@@ -53,18 +157,18 @@ export default function App() {
     );
   }
 
-  // Handle Annexe routes
-  if (currentHash.startsWith('#/annexe/')) {
-    const annexeId = currentHash.replace('#/annexe/', '');
+  // Route: Referenced Page (Annexe)
+  if (route.type === 'annexe' && route.annexeId) {
     return (
       <>
-        <AnnexePage id={annexeId} />
+        <AnnexePage id={route.annexeId} />
         <Analytics />
         <SpeedInsights />
       </>
     );
   }
 
+  // Route: Home Page
   return (
     <div className="min-h-screen bg-brand-beige text-brand-charcoal selection:bg-brand-sage/20 selection:text-brand-charcoal relative">
       <a 

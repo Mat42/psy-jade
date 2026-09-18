@@ -43,6 +43,9 @@ export default function Navbar() {
         top: offsetPosition,
         behavior: 'smooth',
       });
+    } else {
+      // Not on home page, change hash to navigate home and scroll to section
+      window.location.hash = href;
     }
   };
 

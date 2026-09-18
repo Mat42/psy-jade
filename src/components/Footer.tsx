@@ -1,12 +1,19 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Award, Clock, ArrowRight, Compass } from 'lucide-react';
+import { MapPin, ArrowRight, Compass } from 'lucide-react';
 import { CABINET_INFO } from '../data';
+import { ANNEXES_LIST } from '../data/annexes';
 
 export default function Footer() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+    // If it's a page navigation (starts with #/ or /), allow standard navigation
+    if (href.startsWith('#/') || href.startsWith('/')) {
+      return;
+    }
+
+    // If it's an in-page section link
     const element = document.querySelector(href);
     if (element) {
+      e.preventDefault();
       const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
@@ -17,6 +24,9 @@ export default function Footer() {
         top: offsetPosition,
         behavior: 'smooth',
       });
+    } else {
+      // Element not in DOM (e.g. user is on an annexe subpage) -> navigate back to home with anchor
+      window.location.hash = href;
     }
   };
 
@@ -27,10 +37,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid split */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-brand-sage/20 pb-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 border-b border-brand-sage/20 pb-12 mb-12">
           
           {/* Col 1: Psychologist Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-1">
             <h3 className="font-serif text-lg font-bold text-brand-charcoal tracking-tight">
               {CABINET_INFO.name}
             </h3>
@@ -38,7 +48,7 @@ export default function Footer() {
               {CABINET_INFO.title}
             </p>
             <p className="font-sans text-xs text-brand-charcoal/70 leading-relaxed">
-              Cabinet de psychologie accompagnant les adultes, les professionnels, les personnes âgées, et les institutions. Écoute active et approche systémique.
+              Cabinet de psychologie accompagnant les adultes, les adolescents, les personnes âgées, les aidants et les organisations. Écoute active et thérapie systémique à Villefranche-sur-Saône.
             </p>
             <div className="pt-2 flex flex-col gap-1 text-[11px] text-brand-charcoal/50">
               <span className="font-mono">N° RPPS: {CABINET_INFO.rpps}</span>
@@ -49,7 +59,7 @@ export default function Footer() {
           {/* Col 2: Navigation Links */}
           <nav className="space-y-4" aria-label="Plan du site">
             <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
-              Plan du site
+              Navigation
             </h4>
             <ul className="space-y-2.5">
               {[
@@ -57,6 +67,7 @@ export default function Footer() {
                 { label: 'Approche Thérapeutique', href: '#approche' },
                 { label: 'Secteurs d’Intervention', href: '#pour-qui' },
                 { label: 'Tarifs et Mutuelles', href: '#tarifs' },
+                { label: 'Foire Aux Questions', href: '#faq' },
                 { label: 'Prendre Rendez-vous', href: '#contact' }
               ].map((link, idx) => (
                 <li key={idx}>
@@ -73,7 +84,27 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Col 3: Practical Hours */}
+          {/* Col 3: Referenced Pages & Specialties */}
+          <nav className="space-y-4" aria-label="Spécialités et pages dédiées">
+            <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
+              Pages &amp; Consultations
+            </h4>
+            <ul className="space-y-2.5">
+              {ANNEXES_LIST.map((annexe) => (
+                <li key={annexe.id}>
+                  <a
+                    href={`/${annexe.slug}/`}
+                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5"
+                  >
+                    <ArrowRight className="w-3 h-3 text-brand-sage" />
+                    <span className="truncate">{annexe.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Col 4: Practical Hours */}
           <div className="space-y-4">
             <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest">
               Horaires &amp; Consultations
@@ -88,12 +119,12 @@ export default function Footer() {
             </div>
             <div className="bg-white/60 p-3.5 rounded-lg border border-brand-sage/20">
               <p className="font-sans text-[11px] text-brand-charcoal/60 leading-normal">
-                📞 <strong>Urgence psychologique :</strong> Si vous faites face à une détresse aiguë immédiate en dehors de ces horaires, veuillez contacter le <strong>15 (SAMU)</strong> ou le <strong>3114</strong> (Numéro national de prévention du suicide).
+                📞 <strong>Urgence psychologique :</strong> SAMU (<strong>15</strong>) ou Numéro national de prévention du suicide (<strong>3114</strong>).
               </p>
             </div>
           </div>
 
-          {/* Col 4: Cabinet & Access directions (Compass) */}
+          {/* Col 5: Cabinet & Access directions (Compass) */}
           <div className="space-y-4">
             <h4 className="font-serif text-xs font-bold text-brand-charcoal uppercase tracking-widest flex items-center gap-1">
               <Compass className="w-4 h-4 text-brand-teal" />
@@ -107,10 +138,9 @@ export default function Footer() {
             <div className="bg-white/60 border border-brand-sage/20 rounded-xl p-3 space-y-2 relative">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold text-brand-teal uppercase tracking-wider">Plan de quartier</span>
-                <span className="text-[10px] text-brand-charcoal/50">Bus à proximité</span>
+                <span className="text-[10px] text-brand-charcoal/50">Gare à 10 min</span>
               </div>
               
-              {/* Minimalist Grid representing streets */}
               <a 
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CABINET_INFO.address)}`}
                 target="_blank"
@@ -118,18 +148,15 @@ export default function Footer() {
                 className="h-16 bg-[#e9e4df] border border-black/5 rounded relative overflow-hidden flex items-center justify-center hover:opacity-80 transition-opacity block cursor-pointer"
                 aria-label="Ouvrir dans Google Maps"
               >
-                {/* Horizontal road */}
                 <div className="absolute left-0 right-0 h-4 bg-white/90" />
-                {/* Vertical road */}
                 <div className="absolute top-0 bottom-0 w-4 bg-white/90 left-1/2 -translate-x-1/2" />
-                {/* Center marker */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-terracotta text-white p-1 rounded-full shadow-sm z-10">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
               </a>
 
               <p className="font-sans text-[10px] text-brand-charcoal/60 leading-tight">
-                🚗 <strong>Accès :</strong> Entrée juste après le portail violet. Stationnement disponible.
+                🚗 <strong>Accès :</strong> Entrée après le portail violet. Stationnement disponible.
               </p>
             </div>
           </div>
@@ -143,11 +170,11 @@ export default function Footer() {
           </div>
           
           <div className="flex gap-4 flex-wrap justify-center">
-            <span>Enregistrement ARS N° RPPS : {CABINET_INFO.rpps}</span>
+            <span>RPPS : {CABINET_INFO.rpps}</span>
             <span>•</span>
-            <span>Membre d'une association agréée</span>
+            <span>Membre d'une association de gestion agréée</span>
             <span>•</span>
-            <a href="#/mentions-legales" className="hover:text-brand-charcoal cursor-pointer">Mentions Légales</a>
+            <a href="/mentions-legales/" className="hover:text-brand-charcoal cursor-pointer font-medium">Mentions Légales</a>
           </div>
         </div>
 

@@ -62,7 +62,7 @@ export const SPECIALTIES: SpecialtyItem[] = [
       "Deuil périnatal, parcours PMA, fausse couche",
       "Epuisement lié aux responsabilités"
     ],
-    link: "#/annexe/3"
+    link: "/accompagnement-adultes/"
   },
   {
     id: "adolescents",
@@ -78,7 +78,7 @@ export const SPECIALTIES: SpecialtyItem[] = [
       "Tristesse, perte d’envie ou de motivation",
       "Colère, irritabilité ou difficultés à gérer ses émotions"
     ],
-    link: "#/annexe/7"
+    link: "/accompagnement-adolescents/"
   },
   {
     id: "vieillissement",
@@ -93,7 +93,7 @@ export const SPECIALTIES: SpecialtyItem[] = [
       "Être aidant et soutenir un proche",
       "Entrée en établissement"
     ],
-    link: "#/annexe/4"
+    link: "/vieillissement-aidants-familles/"
   },
   {
     id: "travail",
@@ -109,7 +109,7 @@ export const SPECIALTIES: SpecialtyItem[] = [
       "Changements professionnels",
       "Sentiment de solitude lié à la fonction"
     ],
-    link: "#/annexe/5"
+    link: "/souffrance-au-travail-burnout/"
   },
   {
     id: "entreprises",
@@ -125,7 +125,7 @@ export const SPECIALTIES: SpecialtyItem[] = [
       "Soutien des managers et accompagnement du changement",
       "Gestion des crises institutionnelles"
     ],
-    link: "#/annexe/6"
+    link: "/entreprises-etablissements-equipes/"
   }
 ];
 

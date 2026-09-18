@@ -1,6 +1,6 @@
 {
   "name": "Sarah Lambert - Psychologue Clinicienne",
-  "description": "Cabinet de psychologie de Sarah Lambert à Villefranche. Consultation pour adolescents, adultes et couples. Approche bienveillante et personnalisée.",
+  "description": "Cabinet de psychologie à Villefranche-sur-Saône. Consultations pour adultes, adolescents, seniors, aidants et entreprises. Pages dédiées et référencées.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

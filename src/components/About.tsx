@@ -45,7 +45,7 @@ export default function About() {
                 Aujourd'hui, forte de ces expériences, je souhaite les mettre au service des personnes et entreprises que j'accompagne.
               </p>
               <a 
-                href="#/annexe/1"
+                href="/qui-suis-je/"
                 className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
                 aria-label="En savoir plus sur mon parcours"
               >
@@ -80,7 +80,7 @@ export default function About() {
               </p>
             </div>
             <a 
-              href="#/annexe/2"
+              href="/mon-approche/"
               className="inline-flex items-center gap-1.5 text-brand-sage hover:text-brand-teal transition-colors font-medium text-sm pt-2"
               aria-label="En savoir plus sur mon approche"
             >
