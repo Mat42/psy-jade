@@ -74,7 +74,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5"
+                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5 min-h-6 py-1"
                   >
                     <ArrowRight className="w-3 h-3 text-brand-teal" />
                     <span>{link.label}</span>
@@ -94,7 +94,7 @@ export default function Footer() {
                 <li key={annexe.id}>
                   <a
                     href={`/${annexe.slug}/`}
-                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5"
+                    className="font-sans text-xs text-brand-charcoal/70 hover:text-brand-teal transition-colors flex items-center gap-1.5 min-h-6 py-1"
                   >
                     <ArrowRight className="w-3 h-3 text-brand-sage" />
                     <span className="truncate">{annexe.title}</span>
@@ -174,7 +174,7 @@ export default function Footer() {
             <span>•</span>
             <span>Membre d'une association de gestion agréée</span>
             <span>•</span>
-            <a href="/mentions-legales/" className="hover:text-brand-charcoal cursor-pointer font-medium">Mentions Légales</a>
+            <a href="/mentions-legales/" className="hover:text-brand-charcoal cursor-pointer font-medium inline-flex items-center min-h-6">Mentions Légales</a>
           </div>
         </div>
 

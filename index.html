@@ -19,40 +19,55 @@
     <meta name="theme-color" content="#EBE6DF" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.jadebourloux.fr/" />
     <meta property="og:title" content="Jade Bourloux | Psychologue Clinicienne à Villefranche-sur-Saône" />
     <meta property="og:description" content="Jade Bourloux, psychologue clinicienne et thérapeute systémique à Villefranche-sur-Saône. Accompagnement pour adultes, couples, aidants et professionnels." />
-    <!-- Optionnel: <meta property="og:image" content="/og-image.jpg" /> -->
+    <meta property="og:image" content="https://www.jadebourloux.fr/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cabinet de psychologie de Jade Bourloux à Villefranche-sur-Saône" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Jade Bourloux, Psychologue clinicienne" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.jadebourloux.fr/" />
     <meta property="twitter:title" content="Jade Bourloux | Psychologue Clinicienne à Villefranche-sur-Saône" />
     <meta property="twitter:description" content="Jade Bourloux, psychologue clinicienne et thérapeute systémique à Villefranche-sur-Saône." />
-    <!-- Optionnel: <meta property="twitter:image" content="/og-image.jpg" /> -->
+    <meta property="twitter:image" content="https://www.jadebourloux.fr/og-image.jpg" />
 
     <link rel="canonical" href="https://www.jadebourloux.fr/" />
-    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" title="Résumé pour les assistants IA" href="/llms.txt" />
 
     <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalClinic",
+      "@type": "MedicalBusiness",
+      "@id": "https://www.jadebourloux.fr/#cabinet",
       "name": "Cabinet de Psychologie - Jade Bourloux",
-      "medicalSpecialty": "Psychiatric",
+      "description": "Cabinet de psychologie clinique et de thérapie systémique à Villefranche-sur-Saône : adultes, couples, adolescents, aidants, souffrance au travail et interventions en entreprise.",
+      "url": "https://www.jadebourloux.fr/",
+      "image": "https://www.jadebourloux.fr/og-image.jpg",
+      "telephone": "+33764010241",
+      "email": "jade.bourloux@gmail.com",
+      "priceRange": "60 € - 80 €",
+      "currenciesAccepted": "EUR",
+      "availableLanguage": "fr",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "46 rue Alexandre Richetta",
         "addressLocality": "Villefranche-sur-Saône",
         "postalCode": "69400",
+        "addressRegion": "Auvergne-Rhône-Alpes",
         "addressCountry": "FR"
       },
       "geo": {
@@ -60,8 +75,7 @@
         "latitude": 45.9833,
         "longitude": 4.7167
       },
-      "url": "https://www.jadebourloux.fr",
-      "telephone": "+33 4 74 12 34 56",
+      "areaServed": ["Villefranche-sur-Saône", "Beaujolais", "Rhône"],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -75,18 +89,17 @@
           "opens": "08:30",
           "closes": "12:30"
         }
-      ]
+      ],
+      "sameAs": ["https://www.doctolib.fr/psychologue/villefranche-sur-saone/jade-bourloux"],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.jadebourloux.fr/#jade-bourloux",
+        "name": "Jade Bourloux",
+        "jobTitle": "Psychologue clinicienne – Thérapeute systémique",
+        "identifier": { "@type": "PropertyValue", "propertyID": "RPPS", "value": "10112203913" },
+        "url": "https://www.jadebourloux.fr/qui-suis-je/"
+      }
     }
-    </script>
-
-    <!-- Google tag (gtag.js) - Remplacez G-VOTRE_CODE_ICI par votre ID de mesure -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VOTRE_CODE_ICI"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VOTRE_CODE_ICI');
     </script>
   </head>
   <body>

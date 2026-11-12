@@ -7,6 +7,7 @@ export const CABINET_INFO = {
   siret: "10799503700010",
   phone: "07 64 01 02 41",
   phoneFormatted: "+33 7 64 01 02 41",
+  phoneHref: "tel:+33764010241",
   email: "jade.bourloux@gmail.com",
   address: "46 rue Alexandre Richetta, 69400 Villefranche-sur-Saône",
   shortAddress: "Villefranche-sur-Saône",
