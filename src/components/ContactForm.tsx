@@ -37,7 +37,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider">Téléphone</h4>
-                  <a href={`tel:${CABINET_INFO.phone}`} className="font-sans text-base font-semibold text-brand-sage hover:underline mt-1 block">
+                  <a href={CABINET_INFO.phoneHref} className="font-sans text-base font-semibold text-brand-sage hover:underline mt-1 block">
                     {CABINET_INFO.phone}
                   </a>
                   <p className="font-sans text-[11px] text-brand-charcoal/50 mt-0.5">Si je ne suis pas disponible, n'hésitez pas à me laisser un message vocal ou un SMS. Je vous recontacterai dès que possible.</p>
@@ -51,7 +51,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider">Adresse Email</h4>
-                  <a href={`mailto:${CABINET_INFO.email}`} className="font-sans text-sm font-semibold text-brand-charcoal hover:text-brand-sage mt-1 block break-all">
+                  <a href={`mailto:${CABINET_INFO.email}`} className="font-sans text-sm font-semibold text-brand-charcoal hover:text-brand-sage mt-1 block min-h-6 py-0.5 break-all">
                     {CABINET_INFO.email}
                   </a>
                   <p className="font-sans text-[11px] text-brand-charcoal/50 mt-0.5">Réponse confidentielle par messagerie sécurisée</p>

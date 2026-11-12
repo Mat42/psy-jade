@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DIST_DIR = path.resolve(__dirname, '../dist');
+const SSR_DIR = path.resolve(__dirname, '../dist-ssr');
 const TEMPLATE_PATH = path.join(DIST_DIR, 'index.html');
 
 if (!fs.existsSync(TEMPLATE_PATH)) {
@@ -222,13 +223,13 @@ PAGES.forEach((page) => {
   // Pre-rendered Consultation Booking Box
   preRenderedContent += `
         <div style="margin-top: 3rem; padding: 2rem; background: #F8F6F0; border-radius: 1rem; border: 1px solid rgba(138, 154, 134, 0.3);">
-          <h3 style="font-size: 1.35rem; color: #3B867D; margin-top: 0; margin-bottom: 0.75rem;">Cabinet de Psychologie Jade Bourloux</h3>
+          <h2 style="font-size: 1.35rem; color: #3B867D; margin-top: 0; margin-bottom: 0.75rem;">Cabinet de Psychologie Jade Bourloux</h2>
           <p style="font-size: 0.95rem; color: #4b5563; margin-bottom: 1.25rem;">
             Consultations au cabinet au <strong>46 rue Alexandre Richetta, 69400 Villefranche-sur-Saône</strong> ou en téléconsultation.
           </p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="https://www.doctolib.fr/psychologue/villefranche-sur-saone/jade-bourloux" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #3B867D; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Prendre RDV sur Doctolib</a>
-            <a href="tel:0764010241" style="display: inline-block; background: white; color: #2D3130; border: 1px solid #8A9A86; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">07 64 01 02 41</a>
+            <a href="tel:+33764010241" style="display: inline-block; background: white; color: #2D3130; border: 1px solid #8A9A86; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">07 64 01 02 41</a>
           </div>
         </div>
   `;
@@ -237,7 +238,7 @@ PAGES.forEach((page) => {
   const otherPages = PAGES.filter((p) => p.slug !== page.slug && p.slug !== 'mentions-legales');
   preRenderedContent += `
         <section style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(138, 154, 134, 0.2);">
-          <h3 style="font-size: 1.25rem; color: #3B867D; margin-bottom: 1rem;">Autres spécialités et consultations</h3>
+          <h2 style="font-size: 1.25rem; color: #3B867D; margin-bottom: 1rem;">Autres spécialités et consultations</h2>
           <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
             ${otherPages.map((p) => `
               <li style="margin: 0;">
@@ -368,3 +369,61 @@ PAGES.forEach((page) => {
 });
 
 console.log('Static referenced pages generation completed successfully!');
+
+// ---------------------------------------------------------------------------
+// Pre-render the home page so crawlers that do not run JavaScript (AI assistants,
+// link previews) see the full content: services, prices, FAQ and contact details.
+// ---------------------------------------------------------------------------
+const ssrEntry = path.join(SSR_DIR, 'entry-server.js');
+if (!fs.existsSync(ssrEntry)) {
+  console.error('dist-ssr/entry-server.js does not exist. Run "vite build --ssr src/entry-server.tsx --outDir dist-ssr" first.');
+  process.exit(1);
+}
+
+const { renderHome, FAQS, RATES } = await import(pathToFileURL(ssrEntry).href);
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.jadebourloux.fr/#website',
+      url: 'https://www.jadebourloux.fr/',
+      name: 'Jade Bourloux, Psychologue clinicienne à Villefranche-sur-Saône',
+      inLanguage: 'fr-FR',
+      publisher: { '@id': 'https://www.jadebourloux.fr/#cabinet' },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://www.jadebourloux.fr/#faq',
+      inLanguage: 'fr-FR',
+      mainEntity: FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'OfferCatalog',
+      '@id': 'https://www.jadebourloux.fr/#tarifs',
+      name: 'Tarifs des consultations',
+      provider: { '@id': 'https://www.jadebourloux.fr/#cabinet' },
+      itemListElement: RATES.filter((rate) => /\d/.test(rate.price)).map((rate) => ({
+        '@type': 'Offer',
+        name: `${rate.title} (${rate.duration})`,
+        description: rate.details,
+        price: rate.price.replace(/[^\d.,]/g, ''),
+        priceCurrency: 'EUR',
+      })),
+    },
+  ],
+};
+
+let homeHtml = templateHtml.replace(
+  '</head>',
+  `  <script type="application/ld+json">\n${JSON.stringify(homeSchema, null, 2)}\n    </script>\n</head>`,
+);
+homeHtml = homeHtml.replace('<div id="root"></div>', `<div id="root">${renderHome()}</div>`);
+fs.writeFileSync(TEMPLATE_PATH, homeHtml, 'utf-8');
+fs.rmSync(SSR_DIR, { recursive: true, force: true });
+console.log('Generated: index.html (pre-rendered home page)');

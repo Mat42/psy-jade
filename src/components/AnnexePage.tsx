@@ -267,7 +267,7 @@ export default function AnnexePage({ id }: AnnexePageProps) {
                 </a>
 
                 <a
-                  href={`tel:${CABINET_INFO.phoneFormatted.replace(/\s+/g, '')}`}
+                  href={CABINET_INFO.phoneHref}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-brand-sage/30 hover:border-brand-sage/60 text-brand-charcoal rounded-xl font-medium text-sm transition-all shadow-sm"
                 >
                   <Phone className="w-4 h-4 text-brand-sage" />

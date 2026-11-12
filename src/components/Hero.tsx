@@ -100,7 +100,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               </button>
               
               <a
-                href="#/annexe/2"
+                href="/mon-approche/"
                 className="flex items-center justify-center gap-2 bg-transparent hover:bg-brand-charcoal/5 border border-brand-charcoal/20 text-brand-charcoal px-7 py-3.5 rounded-full text-sm font-medium transition-all"
               >
                 <span>Découvrir mon approche</span>
@@ -135,7 +135,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                   <p className="font-sans text-[11px] text-brand-charcoal/60">Un cadre serein, propice à l'apaisement</p>
                 </div>
                 <a
-                  href={`tel:${CABINET_INFO.phone}`}
+                  href={CABINET_INFO.phoneHref}
                   className="p-2.5 bg-brand-sage/10 text-brand-sage rounded-full hover:bg-brand-teal hover:text-white transition-colors"
                   title="Téléphoner au cabinet"
                 >

@@ -72,7 +72,8 @@ export default function Specialties() {
                     <div className="pt-4 border-t border-brand-sage/10">
                       <button
                         onClick={() => toggleExpand(spec.id)}
-                        className="w-full flex items-center justify-between group"
+                        aria-expanded={isExpanded}
+                        className="w-full min-h-11 py-2 flex items-center justify-between group"
                       >
                         <h4 className="font-sans text-xs font-bold text-brand-charcoal uppercase tracking-wider group-hover:text-brand-terracotta transition-colors">
                           Motifs de consultation

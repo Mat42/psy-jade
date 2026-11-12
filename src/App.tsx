@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Specialties from './components/Specialties';
-import FAQTarifs from './components/FAQTarifs';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+import HomePage from './HomePage';
 import AnnexePage from './components/AnnexePage';
 import MentionsLegales from './components/MentionsLegales';
 import { getAnnexeBySlugOrId } from './data/annexes';
@@ -187,29 +181,9 @@ export default function App() {
 
   // Route: Home Page
   return (
-    <div className="min-h-screen bg-brand-beige text-brand-charcoal selection:bg-brand-sage/20 selection:text-brand-charcoal relative">
-      <a 
-        href="#main-content" 
-        className="absolute top-[-40px] left-4 z-[100] px-4 py-2 bg-brand-teal text-white font-medium focus:top-4 transition-all rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal shadow-md"
-      >
-        Aller au contenu principal
-      </a>
-
-      {/* Universal elegant header */}
-      <Navbar />
-
-      <main id="main-content">
-        <Hero onScrollToSection={(id) => {}} />
-        <About />
-        <Specialties />
-        <FAQTarifs />
-        <ContactForm />
-      </main>
-
-      {/* Universal professional footer */}
-      <Footer />
+    <HomePage>
       <Analytics />
       <SpeedInsights />
-    </div>
+    </HomePage>
   );
 }
